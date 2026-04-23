@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services — WebLabs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] } } }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; } body { font-family: 'Inter', sans-serif; }
+        .font-serif-display { font-family: 'Playfair Display', serif; }
+        .gradient-text { background: linear-gradient(135deg, #3b82f6, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    </style>
+</head>
+<body class="bg-slate-950 text-white antialiased">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-slate-950/95 border-b border-slate-800/50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2.5">
+                <div class="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center"><i data-lucide="code-2" class="w-5 h-5 text-white"></i></div>
+                <span class="text-lg font-semibold tracking-tight">Web<span class="text-blue-400">Labs</span></span>
+            </a>
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="index.html" class="text-sm text-slate-400 hover:text-white transition-colors">Home</a>
+                <a href="services.html" class="text-sm text-white font-medium">Services</a>
+                <a href="portfolio.html" class="text-sm text-slate-400 hover:text-white transition-colors">Portfolio</a>
+                <a href="pricing.html" class="text-sm text-slate-400 hover:text-white transition-colors">Pricing</a>
+                <a href="contact.html" class="text-sm text-slate-400 hover:text-white transition-colors">Contact</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="contact.html" class="hidden sm:inline-flex items-center gap-2 bg-blue-600 text-white py-2.5 px-5 text-sm font-medium rounded-lg hover:bg-blue-500 transition-colors">Get Started</a>
+                <button id="mobileMenuBtn" class="lg:hidden p-2 text-slate-400 hover:text-white transition-colors"><i data-lucide="menu" class="w-6 h-6"></i></button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="lg:hidden hidden border-t border-slate-800">
+            <div class="px-6 py-4 space-y-1">
+                <a href="index.html" class="block py-2.5 text-sm text-slate-400 hover:text-white">Home</a>
+                <a href="services.html" class="block py-2.5 text-sm text-white font-medium">Services</a>
+                <a href="portfolio.html" class="block py-2.5 text-sm text-slate-400 hover:text-white">Portfolio</a>
+                <a href="pricing.html" class="block py-2.5 text-sm text-slate-400 hover:text-white">Pricing</a>
+                <a href="contact.html" class="block py-2.5 text-sm text-slate-400 hover:text-white">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="py-20 bg-slate-900 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <span class="text-xs font-bold tracking-widest uppercase text-blue-400 mb-4 block">Our Services</span>
+            <h1 class="text-4xl sm:text-5xl font-medium tracking-tight mb-4">
+                Everything you need to <span class="font-serif-display italic gradient-text">succeed online</span>
+            </h1>
+            <p class="text-slate-400 max-w-2xl mx-auto leading-relaxed">From stunning designs to robust development, we provide comprehensive solutions to establish your powerful online presence.</p>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="py-24 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-slate-900/50 border border-slate-800 hover:border-blue-600 rounded-2xl p-8 transition-colors flex gap-6">
+                    <div class="flex-shrink-0">
+                        <div class="w-14 h-14 bg-blue-600/10 rounded-xl flex items-center justify-center">
+                            <i data-lucide="palette" class="w-7 h-7 text-blue-400"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Web Design</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">Beautiful, modern designs tailored to your brand identity. We create visually stunning layouts that captivate visitors and communicate your message effectively.</p>
+                        <ul class="space-y-1.5 text-sm text-slate-300">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-400"></i>Custom UI/UX Design</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-400"></i>Brand Integration</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-400"></i>Interactive Prototypes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900/50 border border-slate-800 hover:border-blue-600 rounded-2xl p-8 transition-colors flex gap-6">
+                    <div class="flex-shrink-0">
+                        <div class="w-14 h-14 bg-blue-600/10 rounded-xl flex items-center justify-center">
+                            <i data-lucide="code-2" class="w-7 h-7 text-blue-400"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Web Development</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">Clean, performant code that brings your designs to life. We build responsive, fast-loading websites using the latest technologies.</p>
+                        <ul class="space-y-1.5 text-sm text-slate-300">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-400"></i>Frontend & Backend</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-400"></i>CMS Integration</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-400"></i>API Development</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900/50 border border-slate-800 hover:border-blue-600 rounded-2xl p-8 transition-colors flex gap-6">
+                    <div class="flex-shrink-0">
+                        <div class="w-14 h-14 bg-blue-600/10 rounded-xl flex items-center justify-center">
+                            <i data-lucide="shopping-cart" class="w-7 h-7 text-blue-400"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">E-Commerce</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">Sell online with confidence. We build secure, user-friendly online stores with seamless checkout experiences that convert.</p>
+                        <ul class="space-y-1.5 text-sm text-slate-300">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-400"></i>Payment Integration</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-400"></i>Inventory Management</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-400"></i>Secure Checkout</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900/50 border border-slate-800 hover:border-blue-600 rounded-2xl p-8 transition-colors flex gap-6">
+                    <div class="flex-shrink-0">
+                        <div class="w-14 h-14 bg-blue-600/10 rounded-xl flex items-center justify-center">
+                            <i data-lucide="search" class="w-7 h-7 text-blue-400"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">SEO & Optimization</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">Get found on Google. We implement proven SEO strategies to improve your search rankings and drive organic traffic.</p>
+                        <ul class="space-y-1.5 text-sm text-slate-300">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-400"></i>Technical SEO</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-400"></i>Speed Optimization</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-400"></i>Content Strategy</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900/50 border border-slate-800 hover:border-blue-600 rounded-2xl p-8 transition-colors flex gap-6">
+                    <div class="flex-shrink-0">
+                        <div class="w-14 h-14 bg-blue-600/10 rounded-xl flex items-center justify-center">
+                            <i data-lucide="smartphone" class="w-7 h-7 text-blue-400"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Responsive Design</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">Pixel-perfect experiences across desktops, tablets, and mobiles. Your site will look stunning on every device.</p>
+                        <ul class="space-y-1.5 text-sm text-slate-300">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-400"></i>Mobile-First Approach</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-400"></i>Cross-Browser Testing</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-400"></i>Touch Optimized</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900/50 border border-slate-800 hover:border-blue-600 rounded-2xl p-8 transition-colors flex gap-6">
+                    <div class="flex-shrink-0">
+                        <div class="w-14 h-14 bg-blue-600/10 rounded-xl flex items-center justify-center">
+                            <i data-lucide="settings" class="w-7 h-7 text-blue-400"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Maintenance & Support</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">Ongoing support to keep your site secure, updated, and running at peak performance around the clock.</p>
+                        <ul class="space-y-1.5 text-sm text-slate-300">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-400"></i>Security Updates</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-400"></i>Content Updates</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-400"></i>Priority Support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-24 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-xs font-bold tracking-widest uppercase text-blue-400 mb-4 block">Our Process</span>
+                <h2 class="text-3xl sm:text-4xl font-medium tracking-tight">How we <span class="font-serif-display italic gradient-text">work</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="relative text-center">
+                    <div class="w-16 h-16 mx-auto bg-blue-600/10 border-2 border-blue-600/30 rounded-full flex items-center justify-center mb-5">
+                        <span class="text-xl font-bold text-blue-400">1</span>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Discovery</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">We learn about your business, goals, and competitors to craft the perfect strategy.</p>
+                    <div class="hidden lg:block absolute top-8 left-[60%] w-[80%] h-px border-t-2 border-dashed border-slate-700"></div>
+                </div>
+                <div class="relative text-center">
+                    <div class="w-16 h-16 mx-auto bg-blue-600/10 border-2 border-blue-600/30 rounded-full flex items-center justify-center mb-5">
+                        <span class="text-xl font-bold text-blue-400">2</span>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Design</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">We create wireframes and mockups, iterating with you until every detail is perfect.</p>
+                    <div class="hidden lg:block absolute top-8 left-[60%] w-[80%] h-px border-t-2 border-dashed border-slate-700"></div>
+                </div>
+                <div class="relative text-center">
+                    <div class="w-16 h-16 mx-auto bg-blue-600/10 border-2 border-blue-600/30 rounded-full flex items-center justify-center mb-5">
+                        <span class="text-xl font-bold text-blue-400">3</span>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Develop</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">We bring designs to life with clean, performant code and responsive layouts.</p>
+                    <div class="hidden lg:block absolute top-8 left-[60%] w-[80%] h-px border-t-2 border-dashed border-slate-700"></div>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto bg-blue-600/10 border-2 border-blue-600/30 rounded-full flex items-center justify-center mb-5">
+                        <span class="text-xl font-bold text-blue-400">4</span>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Launch</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">We test everything, deploy your site, and provide ongoing support for success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <a href="index.html" class="flex items-center gap-2.5 mb-4">
+                        <div class="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center"><i data-lucide="code-2" class="w-5 h-5 text-white"></i></div>
+                        <span class="text-lg font-semibold tracking-tight">Web<span class="text-blue-400">Labs</span></span>
+                    </a>
+                    <p class="text-sm text-slate-400 leading-relaxed">Professional web design and creation services.</p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider mb-4">Pages</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="index.html" class="text-sm text-slate-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="services.html" class="text-sm text-slate-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="portfolio.html" class="text-sm text-slate-400 hover:text-white transition-colors">Portfolio</a></li>
+                        <li><a href="pricing.html" class="text-sm text-slate-400 hover:text-white transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider mb-4">Services</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="services.html" class="text-sm text-slate-400 hover:text-white transition-colors">Web Design</a></li>
+                        <li><a href="services.html" class="text-sm text-slate-400 hover:text-white transition-colors">Web Development</a></li>
+                        <li><a href="services.html" class="text-sm text-slate-400 hover:text-white transition-colors">E-Commerce</a></li>
+                        <li><a href="services.html" class="text-sm text-slate-400 hover:text-white transition-colors">SEO & Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider mb-4">Contact</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="mailto:Web.Labs@outlook.com" class="text-sm text-slate-400 hover:text-white transition-colors">Web.Labs@outlook.com</a></li>
+                        <li><span class="text-sm text-slate-400">weblab.solutions</span></li>
+                        <li><span class="text-sm text-slate-400">Mon – Fri: 9:00 – 17:00</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 text-center">
+                <p class="text-xs text-slate-500">&copy; 2025 WebLabs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        document.getElementById('mobileMenuBtn').addEventListener('click', () => { document.getElementById('mobileMenu').classList.toggle('hidden'); });
+    </script>
+</body>
+</html>

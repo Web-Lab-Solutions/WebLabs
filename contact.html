@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — WebLabs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] } } } }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; } body { font-family: 'Inter', sans-serif; }
+        .font-serif-display { font-family: 'Playfair Display', serif; }
+        .gradient-text { background: linear-gradient(135deg, #3b82f6, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    </style>
+</head>
+<body class="bg-slate-950 text-white antialiased">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-slate-950/95 border-b border-slate-800/50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2.5">
+                <div class="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center"><i data-lucide="code-2" class="w-5 h-5 text-white"></i></div>
+                <span class="text-lg font-semibold tracking-tight">Web<span class="text-blue-400">Labs</span></span>
+            </a>
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="index.html" class="text-sm text-slate-400 hover:text-white transition-colors">Home</a>
+                <a href="services.html" class="text-sm text-slate-400 hover:text-white transition-colors">Services</a>
+                <a href="portfolio.html" class="text-sm text-slate-400 hover:text-white transition-colors">Portfolio</a>
+                <a href="pricing.html" class="text-sm text-slate-400 hover:text-white transition-colors">Pricing</a>
+                <a href="contact.html" class="text-sm text-white font-medium">Contact</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="contact.html" class="hidden sm:inline-flex items-center gap-2 bg-blue-600 text-white py-2.5 px-5 text-sm font-medium rounded-lg hover:bg-blue-500 transition-colors">Get Started</a>
+                <button id="mobileMenuBtn" class="lg:hidden p-2 text-slate-400 hover:text-white transition-colors"><i data-lucide="menu" class="w-6 h-6"></i></button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="lg:hidden hidden border-t border-slate-800">
+            <div class="px-6 py-4 space-y-1">
+                <a href="index.html" class="block py-2.5 text-sm text-slate-400">Home</a>
+                <a href="services.html" class="block py-2.5 text-sm text-slate-400">Services</a>
+                <a href="portfolio.html" class="block py-2.5 text-sm text-slate-400">Portfolio</a>
+                <a href="pricing.html" class="block py-2.5 text-sm text-slate-400">Pricing</a>
+                <a href="contact.html" class="block py-2.5 text-sm text-white font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="py-20 bg-slate-900 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <span class="text-xs font-bold tracking-widest uppercase text-blue-400 mb-4 block">Contact Us</span>
+            <h1 class="text-4xl sm:text-5xl font-medium tracking-tight mb-4">
+                Let's build something <span class="font-serif-display italic gradient-text">great</span>
+            </h1>
+            <p class="text-slate-400 max-w-2xl mx-auto leading-relaxed">Ready to elevate your online presence? Tell us about your project and we'll get back to you within 24 hours.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-24 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+                <!-- Left: Info -->
+                <div class="lg:col-span-2">
+                    <h2 class="text-2xl font-semibold mb-6">Get in touch</h2>
+                    <p class="text-slate-400 leading-relaxed mb-10">
+                        Fill out the form and we'll get back to you within 24 hours with a free, no-obligation consultation.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-blue-600/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="mail" class="w-5 h-5 text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold mb-1">Email Us</h4>
+                                <a href="mailto:Web.Labs@outlook.com" class="text-sm text-blue-400 hover:text-blue-300 transition-colors">Web.Labs@outlook.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-blue-600/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="globe" class="w-5 h-5 text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold mb-1">Website</h4>
+                                <span class="text-sm text-slate-400">weblab.solutions</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-blue-600/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="clock" class="w-5 h-5 text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold mb-1">Working Hours</h4>
+                                <span class="text-sm text-slate-400">Monday – Friday: 9:00 AM – 5:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="lg:col-span-3 bg-slate-900/50 border border-slate-800 rounded-2xl p-8">
+                    <!--
+                        EMAIL SETUP:
+                        Option A: Formspree (Recommended)
+                        1. Go to https://formspree.io and sign up free
+                        2. Create a form, set recipient to Web.Labs@outlook.com
+                        3. Copy your form ID (e.g., xpzvqkdl)
+                        4. Replace YOUR_FORM_ID in the action attribute below
+                    -->
+                    <form id="contactForm"
+                          action="https://formspree.io/f/YOUR_FORM_ID"
+                          method="POST"
+                          onsubmit="handleFormSubmit(event)"
+                          class="space-y-5">
+                        
+                        <input type="text" name="_gotcha" class="hidden">
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wider">Name</label>
+                                <input type="text" name="name" required placeholder="Your name" class="w-full bg-slate-800/50 border border-slate-700 rounded-xl py-3 px-4 text-sm text-white placeholder-slate-500 focus:border-blue-500 focus:outline-none transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wider">Email</label>
+                                <input type="email" name="email" required placeholder="you@example.com" class="w-full bg-slate-800/50 border border-slate-700 rounded-xl py-3 px-4 text-sm text-white placeholder-slate-500 focus:border-blue-500 focus:outline-none transition-colors">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wider">Business Name</label>
+                            <input type="text" name="business" placeholder="Your business" class="w-full bg-slate-800/50 border border-slate-700 rounded-xl py-3 px-4 text-sm text-white placeholder-slate-500 focus:border-blue-500 focus:outline-none transition-colors">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wider">Service Interested In</label>
+                            <select name="service" class="w-full bg-slate-800/50 border border-slate-700 rounded-xl py-3 px-4 text-sm text-white focus:border-blue-500 focus:outline-none transition-colors appearance-none">
+                                <option value="" class="bg-slate-800">Select a service</option>
+                                <option value="Web Design" class="bg-slate-800">Web Design</option>
+                                <option value="Web Development" class="bg-slate-800">Web Development</option>
+                                <option value="E-Commerce" class="bg-slate-800">E-Commerce</option>
+                                <option value="Website Redesign" class="bg-slate-800">Website Redesign</option>
+                                <option value="Maintenance & Support" class="bg-slate-800">Maintenance & Support</option>
+                                <option value="Other" class="bg-slate-800">Other</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wider">Project Details</label>
+                            <textarea name="message" rows="4" placeholder="Tell us about your project, goals, and timeline..." class="w-full bg-slate-800/50 border border-slate-700 rounded-xl py-3 px-4 text-sm text-white placeholder-slate-500 focus:border-blue-500 focus:outline-none transition-colors resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" id="submitBtn" class="w-full bg-blue-600 text-white py-3.5 px-8 rounded-xl text-sm font-medium hover:bg-blue-500 transition-colors flex items-center justify-center gap-2">
+                            <span id="submitText">Send Message</span>
+                            <i data-lucide="send" class="w-4 h-4" id="submitIcon"></i>
+                        </button>
+                    </form>
+
+                    <!-- Success message -->
+                    <div id="formSuccess" class="hidden text-center py-8">
+                        <div class="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="check-circle-2" class="w-8 h-8 text-green-400"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Message Sent!</h3>
+                        <p class="text-sm text-slate-400">Thank you for reaching out. We'll get back to you within 24 hours.</p>
+                    </div>
+
+                    <!-- Error message -->
+                    <div id="formError" class="hidden text-center py-8">
+                        <div class="w-16 h-16 bg-red-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="alert-circle" class="w-8 h-8 text-red-400"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Something went wrong</h3>
+                        <p class="text-sm text-slate-400 mb-4">Please email us directly instead.</p>
+                        <a href="mailto:Web.Labs@outlook.com" class="inline-flex items-center gap-2 bg-blue-600 text-white py-2.5 px-6 rounded-xl text-sm font-medium hover:bg-blue-500 transition-colors">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            Email Web.Labs@outlook.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div><a href="index.html" class="flex items-center gap-2.5 mb-4"><div class="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center"><i data-lucide="code-2" class="w-5 h-5 text-white"></i></div><span class="text-lg font-semibold tracking-tight">Web<span class="text-blue-400">Labs</span></span></a><p class="text-sm text-slate-400 leading-relaxed">Professional web design and creation services.</p></div>
+                <div><h4 class="text-sm font-semibold uppercase tracking-wider mb-4">Pages</h4><ul class="space-y-2.5"><li><a href="index.html" class="text-sm text-slate-400 hover:text-white transition-colors">Home</a></li><li><a href="services.html" class="text-sm text-slate-400 hover:text-white transition-colors">Services</a></li><li><a href="portfolio.html" class="text-sm text-slate-400 hover:text-white transition-colors">Portfolio</a></li><li><a href="pricing.html" class="text-sm text-slate-400 hover:text-white transition-colors">Pricing</a></li></ul></div>
+                <div><h4 class="text-sm font-semibold uppercase tracking-wider mb-4">Services</h4><ul class="space-y-2.5"><li><a href="services.html" class="text-sm text-slate-400 hover:text-white transition-colors">Web Design</a></li><li><a href="services.html" class="text-sm text-slate-400 hover:text-white transition-colors">Web Development</a></li><li><a href="services.html" class="text-sm text-slate-400 hover:text-white transition-colors">E-Commerce</a></li><li><a href="services.html" class="text-sm text-slate-400 hover:text-white transition-colors">SEO & Support</a></li></ul></div>
+                <div><h4 class="text-sm font-semibold uppercase tracking-wider mb-4">Contact</h4><ul class="space-y-2.5"><li><a href="mailto:Web.Labs@outlook.com" class="text-sm text-slate-400 hover:text-white transition-colors">Web.Labs@outlook.com</a></li><li><span class="text-sm text-slate-400">weblab.solutions</span></li><li><span class="text-sm text-slate-400">Mon – Fri: 9:00 – 17:00</span></li></ul></div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 text-center"><p class="text-xs text-slate-500">&copy; 2025 WebLabs. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        document.getElementById('mobileMenuBtn').addEventListener('click', () => { document.getElementById('mobileMenu').classList.toggle('hidden'); });
+
+        async function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const submitText = document.getElementById('submitText');
+            const formSuccess = document.getElementById('formSuccess');
+            const formError = document.getElementById('formError');
+
+            const formAction = form.getAttribute('action');
+            const isFormspreeConfigured = formAction && !formAction.includes('YOUR_FORM_ID');
+
+            if (!isFormspreeConfigured) {
+                const name = form.querySelector('[name="name"]').value;
+                const email = form.querySelector('[name="email"]').value;
+                const business = form.querySelector('[name="business"]').value;
+                const service = form.querySelector('[name="service"]').value;
+                const message = form.querySelector('[name="message"]').value;
+
+                const subject = encodeURIComponent(`New enquiry from ${name}${business ? ' (' + business + ')' : ''}`);
+                const body = encodeURIComponent(
+                    `Name: ${name}\nEmail: ${email}\nBusiness: ${business || 'N/A'}\nService: ${service || 'Not specified'}\n\nMessage:\n${message || 'No message provided.'}`
+                );
+
+                window.location.href = `mailto:Web.Labs@outlook.com?subject=${subject}&body=${body}`;
+                form.classList.add('hidden');
+                formSuccess.classList.remove('hidden');
+                lucide.createIcons();
+                setTimeout(() => { form.classList.remove('hidden'); formSuccess.classList.add('hidden'); form.reset(); }, 5000);
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitText.textContent = 'Sending...';
+
+            try {
+                const response = await fetch(formAction, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+                if (response.ok) {
+                    form.classList.add('hidden');
+                    formSuccess.classList.remove('hidden');
+                    lucide.createIcons();
+                } else { throw new Error('Form submission failed'); }
+            } catch (error) {
+                form.classList.add('hidden');
+                formError.classList.remove('hidden');
+                lucide.createIcons();
+            }
+
+            setTimeout(() => {
+                form.classList.remove('hidden');
+                formSuccess.classList.add('hidden');
+                formError.classList.add('hidden');
+                submitBtn.disabled = false;
+                submitText.textContent = 'Send Message';
+                form.reset();
+            }, 8000);
+        }
+    </script>
+</body>
+</html>
