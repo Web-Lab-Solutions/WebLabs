@@ -3,126 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Design Portfolio | Recent Projects | WebLabs</title>
-    <meta name="description" content="Browse our portfolio of custom websites designed and built by WebLabs. E-commerce stores, business websites, SaaS platforms, and more. See our recent work.">
-    <meta name="keywords" content="web design portfolio, website design examples, custom website projects, e-commerce website examples, business website design, WebLabs portfolio">
+    <title>Website Design Portfolio | Example Projects | WebLabs</title>
+    <meta name="description" content="See example websites created by WebLabs demonstrating different styles for bakeries, fitness studios, plumbing services, and photography businesses.">
+    <meta name="keywords" content="web design portfolio, website design examples, demo websites, example business websites, WebLabs portfolio">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://weblab.solutions/portfolio.html">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://weblab.solutions/portfolio.html">
-    <meta property="og:title" content="Web Design Portfolio | Recent Projects | WebLabs">
-    <meta property="og:description" content="Browse our portfolio of custom websites designed and built by WebLabs. E-commerce stores, business websites, SaaS platforms, and more.">
-    <meta property="og:site_name" content="WebLabs">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Web Design Portfolio | Recent Projects | WebLabs">
-    <meta name="twitter:description" content="Browse our portfolio of custom websites designed and built by WebLabs.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <meta property="og:type" content="website"><meta property="og:url" content="https://weblab.solutions/portfolio.html"><meta property="og:title" content="Website Design Portfolio | Example Projects | WebLabs"><meta property="og:description" content="See example websites created by WebLabs for various business types."><meta property="og:site_name" content="WebLabs">
+    <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Website Design Portfolio | Example Projects | WebLabs"><meta name="twitter:description" content="See example websites created by WebLabs for various business types.">
+    <script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] } } } }
-    </script>
-    <style>
-        html { scroll-behavior: smooth; } body { font-family: 'Inter', sans-serif; }
-        .font-serif-display { font-family: 'Playfair Display', serif; }
-        .gradient-text { background: linear-gradient(135deg, #3b82f6, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
-        .fade-up.visible { opacity: 1; transform: translateY(0); }
-        .delay-1 { transition-delay: 0.1s; } .delay-2 { transition-delay: 0.2s; } .delay-3 { transition-delay: 0.3s; } .delay-4 { transition-delay: 0.4s; } .delay-5 { transition-delay: 0.5s; } .delay-6 { transition-delay: 0.6s; }
-        .glass-card { background: rgba(15, 23, 42, 0.5); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(148, 163, 184, 0.1); }
-        .glass-card:hover { border-color: rgba(59, 130, 246, 0.4); }
-        .nav-link { position: relative; }
-        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: linear-gradient(90deg, #3b82f6, #06b6d4); border-radius: 1px; transition: width 0.3s ease; }
-        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
-    </style>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif'],serif:['Playfair Display','serif']}}}}</script>
+    <style>html{scroll-behavior:smooth}body{font-family:'Inter',sans-serif}.font-serif-display{font-family:'Playfair Display',serif}.gradient-text{background:linear-gradient(135deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.fade-up{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}.fade-up.visible{opacity:1;transform:translateY(0)}.delay-1{transition-delay:.1s}.delay-2{transition-delay:.2s}.delay-3{transition-delay:.3s}.delay-4{transition-delay:.4s}.glass-card{background:rgba(15,23,42,.5);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(148,163,184,.1)}.glass-card:hover{border-color:rgba(59,130,246,.4)}.nav-link{position:relative}.nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:linear-gradient(90deg,#3b82f6,#06b6d4);border-radius:1px;transition:width .3s ease}.nav-link:hover::after,.nav-link.active::after{width:100%}</style>
 </head>
 <body class="bg-[#020617] text-white antialiased">
-
-    <!-- Navigation -->
-    <nav class="sticky top-0 z-50 bg-[#020617]/80 border-b border-white/5" style="backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-2.5" aria-label="WebLabs Home"><div class="w-9 h-9 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-lg flex items-center justify-center"><i data-lucide="code-2" class="w-5 h-5 text-white"></i></div><span class="text-lg font-semibold tracking-tight">Web<span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Labs</span></span></a>
-            <div class="hidden lg:flex items-center gap-8">
-                <a href="index.html" class="nav-link text-sm text-slate-400 hover:text-white transition-colors">Home</a>
-                <a href="services.html" class="nav-link text-sm text-slate-400 hover:text-white transition-colors">Services</a>
-                <a href="portfolio.html" class="nav-link active text-sm text-white font-medium">Portfolio</a>
-                <a href="pricing.html" class="nav-link text-sm text-slate-400 hover:text-white transition-colors">Pricing</a>
-                <a href="contact.html" class="nav-link text-sm text-slate-400 hover:text-white transition-colors">Contact</a>
-            </div>
-            <div class="flex items-center gap-3">
-                <a href="contact.html" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-500 text-white py-2.5 px-5 text-sm font-medium rounded-lg hover:from-blue-500 hover:to-blue-400 transition-all duration-300">Get Started</a>
-                <button id="mobileMenuBtn" class="lg:hidden p-2 text-slate-400 hover:text-white transition-colors" aria-label="Open menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
-            </div>
-        </div>
-        <div id="mobileMenu" class="lg:hidden hidden border-t border-white/5"><div class="px-6 py-4 space-y-1"><a href="index.html" class="block py-2.5 text-sm text-slate-400">Home</a><a href="services.html" class="block py-2.5 text-sm text-slate-400">Services</a><a href="portfolio.html" class="block py-2.5 text-sm text-white font-medium">Portfolio</a><a href="pricing.html" class="block py-2.5 text-sm text-slate-400">Pricing</a><a href="contact.html" class="block py-2.5 text-sm text-slate-400">Contact</a></div></div>
-    </nav>
+    <nav class="sticky top-0 z-50 bg-[#020617]/80 border-b border-white/5" style="backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)"><div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><a href="index.html" class="flex items-center gap-2.5" aria-label="WebLabs Home"><div class="w-9 h-9 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-lg flex items-center justify-center"><i data-lucide="code-2" class="w-5 h-5 text-white"></i></div><span class="text-lg font-semibold tracking-tight">Web<span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Labs</span></span></a><div class="hidden lg:flex items-center gap-8"><a href="index.html" class="nav-link text-sm text-slate-400 hover:text-white transition-colors">Home</a><a href="services.html" class="nav-link text-sm text-slate-400 hover:text-white transition-colors">Services</a><a href="portfolio.html" class="nav-link active text-sm text-white font-medium">Portfolio</a><a href="pricing.html" class="nav-link text-sm text-slate-400 hover:text-white transition-colors">Pricing</a><a href="contact.html" class="nav-link text-sm text-slate-400 hover:text-white transition-colors">Contact</a></div><button id="mobileMenuBtn" class="lg:hidden p-2 text-slate-400 hover:text-white transition-colors" aria-label="Open menu"><i data-lucide="menu" class="w-6 h-6"></i></button></div><div id="mobileMenu" class="lg:hidden hidden border-t border-white/5"><div class="px-6 py-4 space-y-1"><a href="index.html" class="block py-2.5 text-sm text-slate-400">Home</a><a href="services.html" class="block py-2.5 text-sm text-slate-400">Services</a><a href="portfolio.html" class="block py-2.5 text-sm text-white font-medium">Portfolio</a><a href="pricing.html" class="block py-2.5 text-sm text-slate-400">Pricing</a><a href="contact.html" class="block py-2.5 text-sm text-slate-400">Contact</a></div></div></nav>
 
     <!-- Header -->
     <section class="py-20 bg-[#020617] relative overflow-hidden">
         <div class="absolute top-0 right-1/4 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none"></div>
         <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
             <span class="fade-up text-xs font-bold tracking-widest uppercase text-blue-400 mb-4 block">Our Work</span>
-            <h1 class="fade-up delay-1 text-4xl sm:text-5xl font-semibold tracking-tight mb-4">Web design <span class="font-serif-display italic gradient-text">portfolio</span></h1>
-            <p class="fade-up delay-2 text-slate-400 max-w-2xl mx-auto leading-relaxed">A selection of custom websites we've designed and built for businesses across various industries. Every project is built from scratch — no templates.</p>
+            <h1 class="fade-up delay-1 text-4xl sm:text-5xl font-semibold tracking-tight mb-4">Example <span class="font-serif-display italic gradient-text">projects</span></h1>
+            <p class="fade-up delay-2 text-slate-400 max-w-2xl mx-auto leading-relaxed">Below are demonstration websites we've built to showcase different styles and business types. Click any project to view the full demo site.</p>
         </div>
     </section>
 
-    <!-- Portfolio -->
+    <!-- Portfolio Grid -->
     <section class="py-24 bg-[#020617]">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <article class="fade-up delay-1 group overflow-hidden rounded-2xl glass-card transition-all duration-300 hover:translate-y-[-4px]">
-                    <div class="aspect-[16/10] overflow-hidden bg-slate-900"><img src="https://picsum.photos/seed/weblabs-port1/800/500.jpg" alt="Artisan Marketplace e-commerce website with custom product grid and checkout" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" loading="lazy" width="800" height="500"></div>
-                    <div class="p-6"><span class="text-xs font-bold tracking-widest uppercase text-blue-400 mb-2 block">E-Commerce Website</span><h2 class="text-xl font-semibold mb-2">Artisan Marketplace</h2><p class="text-sm text-slate-400">Handcrafted goods online store with custom checkout flow and inventory management.</p></div>
-                </article>
-                <article class="fade-up delay-2 group overflow-hidden rounded-2xl glass-card transition-all duration-300 hover:translate-y-[-4px]">
-                    <div class="aspect-[16/10] overflow-hidden bg-slate-900"><img src="https://picsum.photos/seed/weblabs-port2/800/500.jpg" alt="Summit Consulting professional business website with client portal" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" loading="lazy" width="800" height="500"></div>
-                    <div class="p-6"><span class="text-xs font-bold tracking-widest uppercase text-blue-400 mb-2 block">Business Website</span><h2 class="text-xl font-semibold mb-2">Summit Consulting</h2><p class="text-sm text-slate-400">Professional services website with client portal integration and lead generation.</p></div>
-                </article>
-                <article class="fade-up delay-3 group overflow-hidden rounded-2xl glass-card transition-all duration-300 hover:translate-y-[-4px]">
-                    <div class="aspect-[16/10] overflow-hidden bg-slate-900"><img src="https://picsum.photos/seed/weblabs-port3/800/500.jpg" alt="Sakura Dining restaurant website with online reservation system" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" loading="lazy" width="800" height="500"></div>
-                    <div class="p-6"><span class="text-xs font-bold tracking-widest uppercase text-blue-400 mb-2 block">Restaurant Website</span><h2 class="text-xl font-semibold mb-2">Sakura Dining</h2><p class="text-sm text-slate-400">Restaurant website with integrated table reservation system and online ordering.</p></div>
-                </article>
-                <article class="fade-up delay-4 group overflow-hidden rounded-2xl glass-card transition-all duration-300 hover:translate-y-[-4px]">
-                    <div class="aspect-[16/10] overflow-hidden bg-slate-900"><img src="https://picsum.photos/seed/weblabs-port4/800/500.jpg" alt="CloudSync SaaS product landing page with feature demos" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" loading="lazy" width="800" height="500"></div>
-                    <div class="p-6"><span class="text-xs font-bold tracking-widest uppercase text-blue-400 mb-2 block">SaaS Landing Page</span><h2 class="text-xl font-semibold mb-2">CloudSync App</h2><p class="text-sm text-slate-400">SaaS product landing page with interactive feature demos and subscription management.</p></div>
-                </article>
-                <article class="fade-up delay-5 group overflow-hidden rounded-2xl glass-card transition-all duration-300 hover:translate-y-[-4px]">
-                    <div class="aspect-[16/10] overflow-hidden bg-slate-900"><img src="https://picsum.photos/seed/weblabs-port5/800/500.jpg" alt="Elena Voss Studio creative portfolio website with filterable gallery" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" loading="lazy" width="800" height="500"></div>
-                    <div class="p-6"><span class="text-xs font-bold tracking-widest uppercase text-blue-400 mb-2 block">Portfolio Website</span><h2 class="text-xl font-semibold mb-2">Elena Voss Studio</h2><p class="text-sm text-slate-400">Creative portfolio with filterable gallery, smooth animations, and contact form.</p></div>
-                </article>
-                <article class="fade-up delay-6 group overflow-hidden rounded-2xl glass-card transition-all duration-300 hover:translate-y-[-4px]">
-                    <div class="aspect-[16/10] overflow-hidden bg-slate-900"><img src="https://picsum.photos/seed/weblabs-port6/800/500.jpg" alt="IronWorks Gym fitness website with class booking and membership management" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" loading="lazy" width="800" height="500"></div>
-                    <div class="p-6"><span class="text-xs font-bold tracking-widest uppercase text-blue-400 mb-2 block">Fitness Website</span><h2 class="text-xl font-semibold mb-2">IronWorks Gym</h2><p class="text-sm text-slate-400">Gym website with class booking system and membership management integration.</p></div>
-                </article>
-            </div>
-        </div>
-    </section>
 
-    <!-- Testimonials -->
-    <section class="py-24 bg-[#020617] border-t border-white/5 relative overflow-hidden">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/8 rounded-full blur-[150px] pointer-events-none"></div>
-        <div class="relative z-10 max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <span class="fade-up text-xs font-bold tracking-widest uppercase text-blue-400 mb-4 block">Testimonials</span>
-                <h2 class="fade-up delay-1 text-3xl sm:text-4xl font-semibold tracking-tight">What our clients <span class="font-serif-display italic gradient-text">say</span></h2>
+                <!-- Demo 1: Bakery -->
+                <a href="demo-bakery.html" class="fade-up delay-1 group overflow-hidden rounded-2xl glass-card transition-all duration-300 hover:translate-y-[-4px] block">
+                    <div class="aspect-[16/10] overflow-hidden bg-slate-900">
+                        <img src="https://picsum.photos/seed/demo-bakery/800/500.jpg" alt="Example bakery website with warm colours, menu display, and online ordering" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" loading="lazy" width="800" height="500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold tracking-widest uppercase text-blue-400 mb-2 block">Example — Bakery & Café</span>
+                        <h2 class="text-xl font-semibold mb-2 group-hover:text-blue-300 transition-colors">Sweet Crumb Bakery</h2>
+                        <p class="text-sm text-slate-400">Warm, inviting design with menu display, online ordering, and location info. Showcases a local food business layout.</p>
+                        <span class="inline-flex items-center gap-1 text-sm text-blue-400 mt-4 group-hover:gap-2 transition-all">View demo <i data-lucide="external-link" class="w-3 h-3"></i></span>
+                    </div>
+                </a>
+
+                <!-- Demo 2: Fitness -->
+                <a href="demo-fitness.html" class="fade-up delay-2 group overflow-hidden rounded-2xl glass-card transition-all duration-300 hover:translate-y-[-4px] block">
+                    <div class="aspect-[16/10] overflow-hidden bg-slate-900">
+                        <img src="https://picsum.photos/seed/demo-fitness/800/500.jpg" alt="Example fitness website with class timetable, membership plans, and bold imagery" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" loading="lazy" width="800" height="500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold tracking-widest uppercase text-blue-400 mb-2 block">Example — Fitness Studio</span>
+                        <h2 class="text-xl font-semibold mb-2 group-hover:text-blue-300 transition-colors">Iron Peak Fitness</h2>
+                        <p class="text-sm text-slate-400">Bold, energetic design with class timetables, membership tiers, and trainer profiles. Ideal for gyms and studios.</p>
+                        <span class="inline-flex items-center gap-1 text-sm text-blue-400 mt-4 group-hover:gap-2 transition-all">View demo <i data-lucide="external-link" class="w-3 h-3"></i></span>
+                    </div>
+                </a>
+
+                <!-- Demo 3: Plumbing -->
+                <a href="demo-plumbing.html" class="fade-up delay-3 group overflow-hidden rounded-2xl glass-card transition-all duration-300 hover:translate-y-[-4px] block">
+                    <div class="aspect-[16/10] overflow-hidden bg-slate-900">
+                        <img src="https://picsum.photos/seed/demo-plumbing/800/500.jpg" alt="Example plumbing website with emergency callout, services list, and trust signals" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" loading="lazy" width="800" height="500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold tracking-widest uppercase text-blue-400 mb-2 block">Example — Plumbing & Heating</span>
+                        <h2 class="text-xl font-semibold mb-2 group-hover:text-blue-300 transition-colors">FlowFix Plumbing</h2>
+                        <p class="text-sm text-slate-400">Clean, trustworthy design with emergency call-to-action, service areas, and review highlights. Built for trades businesses.</p>
+                        <span class="inline-flex items-center gap-1 text-sm text-blue-400 mt-4 group-hover:gap-2 transition-all">View demo <i data-lucide="external-link" class="w-3 h-3"></i></span>
+                    </div>
+                </a>
+
+                <!-- Demo 4: Photography -->
+                <a href="demo-photography.html" class="fade-up delay-4 group overflow-hidden rounded-2xl glass-card transition-all duration-300 hover:translate-y-[-4px] block">
+                    <div class="aspect-[16/10] overflow-hidden bg-slate-900">
+                        <img src="https://picsum.photos/seed/demo-photography/800/500.jpg" alt="Example photography website with gallery, booking system, and minimalist portfolio" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" loading="lazy" width="800" height="500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold tracking-widest uppercase text-blue-400 mb-2 block">Example — Photography Studio</span>
+                        <h2 class="text-xl font-semibold mb-2 group-hover:text-blue-300 transition-colors">Lens & Light Studio</h2>
+                        <p class="text-sm text-slate-400">Minimalist, image-focused design with gallery, pricing packages, and booking enquiry. Perfect for creative professionals.</p>
+                        <span class="inline-flex items-center gap-1 text-sm text-blue-400 mt-4 group-hover:gap-2 transition-all">View demo <i data-lucide="external-link" class="w-3 h-3"></i></span>
+                    </div>
+                </a>
+
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <article class="fade-up delay-1 glass-card rounded-2xl p-8 transition-all duration-300 hover:translate-y-[-4px]">
-                    <div class="flex gap-1 mb-4" aria-label="5 out of 5 stars"><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i></div>
-                    <blockquote class="text-sm text-slate-300 leading-relaxed mb-6">"WebLabs completely transformed our online presence. The website they built is fast, beautiful, and our enquiries have tripled since launch."</blockquote>
-                    <div class="flex items-center gap-3"><div class="w-10 h-10 bg-gradient-to-br from-blue-500/20 to-cyan-400/10 rounded-full flex items-center justify-center"><span class="text-sm font-semibold text-blue-400">JR</span></div><div><cite class="text-sm font-semibold not-italic">James Reid</cite><div class="text-xs text-slate-500">Summit Consulting</div></div></div>
-                </article>
-                <article class="fade-up delay-2 glass-card rounded-2xl p-8 transition-all duration-300 hover:translate-y-[-4px]">
-                    <div class="flex gap-1 mb-4" aria-label="5 out of 5 stars"><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i></div>
-                    <blockquote class="text-sm text-slate-300 leading-relaxed mb-6">"From the first call to launch day, the WebLabs team was professional, responsive, and genuinely cared about getting every detail right."</blockquote>
-                    <div class="flex items-center gap-3"><div class="w-10 h-10 bg-gradient-to-br from-blue-500/20 to-cyan-400/10 rounded-full flex items-center justify-center"><span class="text-sm font-semibold text-blue-400">SK</span></div><div><cite class="text-sm font-semibold not-italic">Sarah Kim</cite><div class="text-xs text-slate-500">Artisan Marketplace</div></div></div>
-                </article>
-                <article class="fade-up delay-3 glass-card rounded-2xl p-8 transition-all duration-300 hover:translate-y-[-4px]">
-                    <div class="flex gap-1 mb-4" aria-label="5 out of 5 stars"><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i></div>
-                    <blockquote class="text-sm text-slate-300 leading-relaxed mb-6">"Our restaurant needed an online ordering system that actually works. WebLabs delivered — the website is gorgeous and orders flow seamlessly."</blockquote>
-                    <div class="flex items-center gap-3"><div class="w-10 h-10 bg-gradient-to-br from-blue-500/20 to-cyan-400/10 rounded-full flex items-center justify-center"><span class="text-sm font-semibold text-blue-400">MT</span></div><div><cite class="text-sm font-semibold not-italic">Marco Tanaka</cite><div class="text-xs text-slate-500">Sakura Dining</div></div></div>
-                </article>
+
+            <!-- Note -->
+            <div class="fade-up mt-12 text-center">
+                <p class="text-sm text-slate-500">These are demonstration websites built to showcase our capabilities. <a href="contact.html" class="text-blue-400 hover:text-blue-300 transition-colors">Get in touch</a> to discuss a website tailored to your business.</p>
             </div>
         </div>
     </section>
@@ -130,20 +97,14 @@
     <!-- CTA -->
     <section class="py-16 bg-[#020617] border-t border-white/5">
         <div class="max-w-3xl mx-auto px-6 text-center">
-            <h2 class="fade-up text-2xl font-semibold tracking-tight mb-4">Want a website like these?</h2>
-            <p class="fade-up delay-1 text-slate-400 mb-6">Every project above was built from scratch. <a href="contact.html" class="text-blue-400 hover:text-blue-300 transition-colors">Tell us about yours</a> and we'll make it happen.</p>
-            <a href="contact.html" class="fade-up delay-2 inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-500 text-white py-3 px-8 text-sm font-medium rounded-xl hover:from-blue-500 hover:to-blue-400 transition-all duration-300">Start Your Project <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            <h2 class="fade-up text-2xl font-semibold tracking-tight mb-4">Like what you see?</h2>
+            <p class="fade-up delay-1 text-slate-400 mb-6">We can build a website like any of these — tailored to your brand and business. <a href="contact.html" class="text-blue-400 hover:text-blue-300 transition-colors">Tell us about your project</a>.</p>
+            <a href="contact.html" class="fade-up delay-2 inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-500 text-white py-3 px-8 text-sm font-medium rounded-xl hover:from-blue-500 hover:to-blue-400 transition-all duration-300">Get In Touch <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-[#020617] border-t border-white/5 pt-16 pb-8"><div class="max-w-7xl mx-auto px-6"><div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12"><div><a href="index.html" class="flex items-center gap-2.5 mb-4" aria-label="WebLabs Home"><div class="w-9 h-9 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-lg flex items-center justify-center"><i data-lucide="code-2" class="w-5 h-5 text-white"></i></div><span class="text-lg font-semibold tracking-tight">Web<span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Labs</span></span></a><p class="text-sm text-slate-500 leading-relaxed">Professional web design and website creation services.</p></div><div><h4 class="text-sm font-semibold uppercase tracking-wider mb-4 text-slate-300">Pages</h4><ul class="space-y-2.5"><li><a href="index.html" class="text-sm text-slate-500 hover:text-white transition-colors">Home</a></li><li><a href="services.html" class="text-sm text-slate-500 hover:text-white transition-colors">Services</a></li><li><a href="portfolio.html" class="text-sm text-slate-500 hover:text-white transition-colors">Portfolio</a></li><li><a href="pricing.html" class="text-sm text-slate-500 hover:text-white transition-colors">Pricing</a></li><li><a href="contact.html" class="text-sm text-slate-500 hover:text-white transition-colors">Contact</a></li></ul></div><div><h4 class="text-sm font-semibold uppercase tracking-wider mb-4 text-slate-300">Services</h4><ul class="space-y-2.5"><li><a href="services.html" class="text-sm text-slate-500 hover:text-white transition-colors">Web Design</a></li><li><a href="services.html" class="text-sm text-slate-500 hover:text-white transition-colors">Web Development</a></li><li><a href="services.html" class="text-sm text-slate-500 hover:text-white transition-colors">E-Commerce</a></li><li><a href="services.html" class="text-sm text-slate-500 hover:text-white transition-colors">SEO & Support</a></li></ul></div><div><h4 class="text-sm font-semibold uppercase tracking-wider mb-4 text-slate-300">Contact</h4><ul class="space-y-2.5"><li><a href="mailto:Web.Labs@outlook.com" class="text-sm text-slate-500 hover:text-white transition-colors">Web.Labs@outlook.com</a></li><li><a href="https://weblab.solutions" class="text-sm text-slate-500 hover:text-white transition-colors">weblab.solutions</a></li><li><span class="text-sm text-slate-500">Mon – Fri: 9:00 – 17:00</span></li></ul></div></div><div class="border-t border-white/5 pt-8 text-center"><p class="text-xs text-slate-600">&copy; 2025 WebLabs. All rights reserved.</p></div></div></footer>
 
-    <script>
-        lucide.createIcons();
-        document.getElementById('mobileMenuBtn').addEventListener('click', () => { document.getElementById('mobileMenu').classList.toggle('hidden'); });
-        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-    </script>
+    <script>lucide.createIcons();document.getElementById('mobileMenuBtn').addEventListener('click',()=>{document.getElementById('mobileMenu').classList.toggle('hidden')});const observer=new IntersectionObserver(e=>{e.forEach(t=>{if(t.isIntersecting){t.target.classList.add('visible');observer.unobserve(t.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));</script>
 </body>
 </html>

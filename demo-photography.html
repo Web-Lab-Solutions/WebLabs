@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lens & Light Studio — Example Website by WebLabs</title>
+    <meta name="description" content="Example photography website created by WebLabs to demonstrate our web design capabilities. This is a demo site — Lens & Light Studio is not a real business.">
+    <meta name="robots" content="noindex, nofollow">
+    <script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif'],serif:['Playfair Display','serif']}}}}</script>
+    <style>html{scroll-behavior:smooth}body{font-family:'Inter',sans-serif}.font-serif-display{font-family:'Playfair Display',serif}</style>
+</head>
+<body class="bg-neutral-950 text-white antialiased">
+    <div class="bg-blue-600 text-white text-center py-2 text-xs font-medium tracking-wide">✦ Example website built by <a href="https://weblab.solutions" class="underline hover:text-blue-200">WebLabs</a>. Lens & Light Studio is not a real business. <a href="portfolio.html" class="underline hover:text-blue-200">← Back to portfolio</a></div>
+
+    <nav class="border-b border-neutral-800 py-5"><div class="max-w-6xl mx-auto px-6 flex items-center justify-between"><span class="font-serif-display text-xl italic">Lens & Light</span><div class="hidden md:flex items-center gap-6"><a href="#work" class="text-sm text-neutral-400 hover:text-white transition-colors">Work</a><a href="#pricing" class="text-sm text-neutral-400 hover:text-white transition-colors">Pricing</a><a href="#about" class="text-sm text-neutral-400 hover:text-white transition-colors">About</a><a href="#contact" class="text-sm text-neutral-400 hover:text-white transition-colors">Contact</a></div></div></nav>
+
+    <section class="py-28 md:py-40 text-center px-6"><h1 class="font-serif-display text-5xl md:text-7xl italic mb-4">Moments<br>captured forever</h1><p class="text-neutral-400 max-w-md mx-auto mb-8">Portrait, wedding, and editorial photography — with a creative eye and calm direction.</p><a href="#contact" class="inline-flex items-center gap-2 border border-white/20 text-white py-3 px-6 rounded text-sm font-medium hover:bg-white hover:text-black transition-all duration-300">Book a Session</a></section>
+
+    <section id="work" class="pb-20"><h2 class="text-center text-xs tracking-widest uppercase text-neutral-500 mb-8">Selected Work</h2><div class="grid grid-cols-2 md:grid-cols-3 gap-1"><img src="https://picsum.photos/seed/photo1/600/600.jpg" alt="Portrait photography example" class="w-full aspect-square object-cover" loading="lazy"><img src="https://picsum.photos/seed/photo2/600/600.jpg" alt="Wedding photography example" class="w-full aspect-square object-cover" loading="lazy"><img src="https://picsum.photos/seed/photo3/600/600.jpg" alt="Editorial photography example" class="w-full aspect-square object-cover" loading="lazy"><img src="https://picsum.photos/seed/photo4/600/600.jpg" alt="Studio photography example" class="w-full aspect-square object-cover" loading="lazy"><img src="https://picsum.photos/seed/photo5/600/600.jpg" alt="Family photography example" class="w-full aspect-square object-cover" loading="lazy"><img src="https://picsum.photos/seed/photo6/600/600.jpg" alt="Event photography example" class="w-full aspect-square object-cover" loading="lazy"></div></section>
+
+    <section id="pricing" class="py-20 border-t border-neutral-800"><div class="max-w-4xl mx-auto px-6"><h2 class="font-serif-display text-3xl text-center italic mb-10">Packages</h2><div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="border border-neutral-800 rounded p-6 text-center"><h3 class="font-semibold mb-1">Portrait</h3><p class="text-2xl font-bold mt-2">£150</p><p class="text-sm text-neutral-400 mt-2">1 hour, 1 location, 15 edited images</p></div><div class="border border-neutral-700 rounded p-6 text-center"><h3 class="font-semibold mb-1">Wedding</h3><p class="text-2xl font-bold mt-2">£1,200</p><p class="text-sm text-neutral-400 mt-2">Full day, 2 photographers, 300+ images</p></div><div class="border border-neutral-800 rounded p-6 text-center"><h3 class="font-semibold mb-1">Commercial</h3><p class="text-2xl font-bold mt-2">Custom</p><p class="text-sm text-neutral-400 mt-2">Product, branding, editorial — let's talk</p></div></div></div></section>
+
+    <section id="about" class="py-20 border-t border-neutral-800"><div class="max-w-2xl mx-auto px-6 text-center"><h2 class="font-serif-display text-3xl italic mb-6">About</h2><p class="text-neutral-400 leading-relaxed">With 8 years behind the lens, I specialise in natural light photography that tells a story. I keep sessions relaxed — the best photos happen when you forget the camera's there.</p></div></section>
+
+    <section id="contact" class="py-20 border-t border-neutral-800"><div class="max-w-xl mx-auto px-6 text-center"><h2 class="font-serif-display text-3xl italic mb-6">Get in touch</h2><p class="text-neutral-400 mb-4">hello@lensandlight.example</p><a href="contact.html" class="inline-flex items-center gap-2 border border-white/20 text-white py-3 px-6 rounded text-sm font-medium hover:bg-white hover:text-black transition-all duration-300">Send a Message</a></div></section>
+
+    <footer class="border-t border-neutral-800 py-8 text-center text-xs text-neutral-600"><p>© 2025 Lens & Light Studio — <strong class="text-neutral-400">Demo site by <a href="https://weblab.solutions" class="underline hover:text-neutral-200">WebLabs</a></strong>. Not a real business.</p></footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>

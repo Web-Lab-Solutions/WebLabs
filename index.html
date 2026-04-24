@@ -57,8 +57,6 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
-        /* Animated gradient background for hero */
         .hero-gradient {
             background: linear-gradient(-45deg, #020617, #0f172a, #0c1a3a, #0a1628);
             background-size: 400% 400%;
@@ -69,119 +67,38 @@
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-
-        /* Entrance animations - GPU only */
         .fade-up {
             opacity: 0;
             transform: translateY(24px);
             transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
         }
-        .fade-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Stagger delays */
-        .delay-1 { transition-delay: 0.1s; }
-        .delay-2 { transition-delay: 0.2s; }
-        .delay-3 { transition-delay: 0.3s; }
-        .delay-4 { transition-delay: 0.4s; }
-        .delay-5 { transition-delay: 0.5s; }
-
-        /* Glass card */
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; } .delay-2 { transition-delay: 0.2s; } .delay-3 { transition-delay: 0.3s; } .delay-4 { transition-delay: 0.4s; }
         .glass-card {
             background: rgba(15, 23, 42, 0.5);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(148, 163, 184, 0.1);
         }
-        .glass-card:hover {
-            border-color: rgba(59, 130, 246, 0.4);
-        }
-
-        /* Glow button */
-        .glow-btn {
-            position: relative;
-            overflow: hidden;
-        }
+        .glass-card:hover { border-color: rgba(59, 130, 246, 0.4); }
+        .glow-btn { position: relative; overflow: hidden; }
         .glow-btn::after {
-            content: '';
-            position: absolute;
-            inset: -2px;
+            content: ''; position: absolute; inset: -2px;
             background: linear-gradient(135deg, #3b82f6, #06b6d4, #3b82f6);
-            border-radius: inherit;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.4s;
-            filter: blur(12px);
+            border-radius: inherit; z-index: -1; opacity: 0; transition: opacity 0.4s; filter: blur(12px);
         }
-        .glow-btn:hover::after {
-            opacity: 0.6;
-        }
-
-        /* Animated border gradient on featured card */
-        .gradient-border {
-            position: relative;
-            background: rgba(15, 23, 42, 0.5);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-        .gradient-border::before {
-            content: '';
-            position: absolute;
-            inset: -1px;
-            border-radius: inherit;
-            padding: 1px;
-            background: linear-gradient(135deg, #3b82f6, #06b6d4, #3b82f6);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            animation: borderRotate 4s linear infinite;
-            background-size: 300% 300%;
-        }
-        @keyframes borderRotate {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* Smooth underline on hover for nav */
-        .nav-link {
-            position: relative;
-        }
+        .glow-btn:hover::after { opacity: 0.6; }
+        .nav-link { position: relative; }
         .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #3b82f6, #06b6d4);
-            border-radius: 1px;
-            transition: width 0.3s ease;
+            content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+            background: linear-gradient(90deg, #3b82f6, #06b6d4); border-radius: 1px; transition: width 0.3s ease;
         }
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-
-        /* Pulse dot */
-        .pulse-dot {
-            position: relative;
-        }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        .pulse-dot { position: relative; }
         .pulse-dot::after {
-            content: '';
-            position: absolute;
-            inset: -3px;
-            border-radius: 50%;
-            background: #3b82f6;
-            opacity: 0;
-            animation: pulseDot 2s ease-out infinite;
+            content: ''; position: absolute; inset: -3px; border-radius: 50%;
+            background: #3b82f6; opacity: 0; animation: pulseDot 2s ease-out infinite;
         }
-        @keyframes pulseDot {
-            0% { transform: scale(1); opacity: 0.5; }
-            100% { transform: scale(2.5); opacity: 0; }
-        }
+        @keyframes pulseDot { 0% { transform: scale(1); opacity: 0.5; } 100% { transform: scale(2.5); opacity: 0; } }
     </style>
 </head>
 <body class="bg-[#020617] text-white antialiased">
@@ -203,7 +120,6 @@
                 <a href="contact.html" class="nav-link text-sm text-slate-400 hover:text-white transition-colors">Contact</a>
             </div>
             <div class="flex items-center gap-3">
-                <a href="contact.html" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-500 text-white py-2.5 px-5 text-sm font-medium rounded-lg hover:from-blue-500 hover:to-blue-400 transition-all duration-300">Get Started</a>
                 <button id="mobileMenuBtn" class="lg:hidden p-2 text-slate-400 hover:text-white transition-colors" aria-label="Open menu">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
@@ -222,28 +138,23 @@
 
     <!-- Hero -->
     <section class="hero-gradient relative min-h-[700px] h-screen flex items-center justify-center overflow-hidden">
-        <!-- Mesh gradient orbs -->
         <div class="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-[150px] pointer-events-none"></div>
         <div class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-cyan-500/15 rounded-full blur-[130px] pointer-events-none"></div>
-
         <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
             <div class="fade-up inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-8" style="backdrop-filter: blur(8px);">
                 <span class="pulse-dot h-2 w-2 rounded-full bg-blue-500 relative"></span>
                 <span class="text-xs font-medium text-slate-300 tracking-wide ml-1">Now accepting new projects</span>
             </div>
-
             <h1 class="fade-up delay-1 text-4xl sm:text-5xl md:text-7xl font-semibold tracking-tight leading-[1.1] mb-6">
                 Professional web design<br>
                 <span class="font-serif-display italic gradient-text">that works</span> for your business
             </h1>
-
             <p class="fade-up delay-2 text-base sm:text-lg text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
                 WebLabs creates custom, high-performance websites that elevate your brand, engage your audience, and drive real results. From concept to launch — we handle it all.
             </p>
-
             <div class="fade-up delay-3 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="contact.html" class="glow-btn w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-500 text-white py-3.5 px-8 text-sm font-medium rounded-xl hover:from-blue-500 hover:to-blue-400 transition-all duration-300">
-                    Start Your Project
+                    Get In Touch
                     <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
                 <a href="portfolio.html" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 glass-card text-white py-3.5 px-8 text-sm font-medium rounded-xl hover:bg-white/10 transition-all duration-300">
@@ -263,61 +174,46 @@
                 </h2>
                 <p class="fade-up delay-2 text-slate-400 max-w-2xl mx-auto leading-relaxed">From stunning designs to robust development, we provide everything you need to establish a powerful online presence.</p>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <article class="fade-up delay-1 glass-card rounded-2xl p-8 transition-all duration-300 hover:translate-y-[-4px]">
-                    <div class="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-cyan-400/10 rounded-xl flex items-center justify-center mb-5">
-                        <i data-lucide="palette" class="w-6 h-6 text-blue-400"></i>
-                    </div>
+                    <div class="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-cyan-400/10 rounded-xl flex items-center justify-center mb-5"><i data-lucide="palette" class="w-6 h-6 text-blue-400"></i></div>
                     <h3 class="text-lg font-semibold mb-3">Web Design</h3>
                     <p class="text-sm text-slate-400 leading-relaxed">Beautiful, modern website designs tailored to your brand identity that captivate visitors and drive engagement.</p>
-                    <a href="services.html" class="inline-flex items-center gap-1 text-sm text-blue-400 mt-4 hover:text-blue-300 transition-colors hover:gap-2">
-                        Learn more <i data-lucide="arrow-right" class="w-3 h-3"></i>
-                    </a>
+                    <a href="services.html" class="inline-flex items-center gap-1 text-sm text-blue-400 mt-4 hover:text-blue-300 transition-colors hover:gap-2">Learn more <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
                 </article>
-
                 <article class="fade-up delay-2 glass-card rounded-2xl p-8 transition-all duration-300 hover:translate-y-[-4px]">
-                    <div class="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-cyan-400/10 rounded-xl flex items-center justify-center mb-5">
-                        <i data-lucide="code-2" class="w-6 h-6 text-blue-400"></i>
-                    </div>
+                    <div class="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-cyan-400/10 rounded-xl flex items-center justify-center mb-5"><i data-lucide="code-2" class="w-6 h-6 text-blue-400"></i></div>
                     <h3 class="text-lg font-semibold mb-3">Web Development</h3>
                     <p class="text-sm text-slate-400 leading-relaxed">Clean, performant code that brings your designs to life using the latest web development technologies.</p>
-                    <a href="services.html" class="inline-flex items-center gap-1 text-sm text-blue-400 mt-4 hover:text-blue-300 transition-colors hover:gap-2">
-                        Learn more <i data-lucide="arrow-right" class="w-3 h-3"></i>
-                    </a>
+                    <a href="services.html" class="inline-flex items-center gap-1 text-sm text-blue-400 mt-4 hover:text-blue-300 transition-colors hover:gap-2">Learn more <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
                 </article>
-
                 <article class="fade-up delay-3 glass-card rounded-2xl p-8 transition-all duration-300 hover:translate-y-[-4px]">
-                    <div class="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-cyan-400/10 rounded-xl flex items-center justify-center mb-5">
-                        <i data-lucide="shopping-cart" class="w-6 h-6 text-blue-400"></i>
-                    </div>
+                    <div class="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-cyan-400/10 rounded-xl flex items-center justify-center mb-5"><i data-lucide="shopping-cart" class="w-6 h-6 text-blue-400"></i></div>
                     <h3 class="text-lg font-semibold mb-3">E-Commerce</h3>
                     <p class="text-sm text-slate-400 leading-relaxed">Secure, user-friendly online stores with seamless checkout experiences that convert visitors into customers.</p>
-                    <a href="services.html" class="inline-flex items-center gap-1 text-sm text-blue-400 mt-4 hover:text-blue-300 transition-colors hover:gap-2">
-                        Learn more <i data-lucide="arrow-right" class="w-3 h-3"></i>
-                    </a>
+                    <a href="services.html" class="inline-flex items-center gap-1 text-sm text-blue-400 mt-4 hover:text-blue-300 transition-colors hover:gap-2">Learn more <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- Stats -->
-    <section class="py-16 bg-[#020617] border-y border-white/5">
+    <!-- Stats with counting animation -->
+    <section id="stats-section" class="py-16 bg-[#020617] border-y border-white/5">
         <div class="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div class="fade-up delay-1">
-                <div class="text-3xl font-bold mb-1 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">50+</div>
+                <div class="text-3xl font-bold mb-1 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent"><span class="counter" data-target="50" data-suffix="+">0</span></div>
                 <div class="text-sm text-slate-500">Websites Delivered</div>
             </div>
             <div class="fade-up delay-2">
-                <div class="text-3xl font-bold mb-1 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">100%</div>
+                <div class="text-3xl font-bold mb-1 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent"><span class="counter" data-target="100" data-suffix="%">0</span></div>
                 <div class="text-sm text-slate-500">Client Satisfaction</div>
             </div>
             <div class="fade-up delay-3">
-                <div class="text-3xl font-bold mb-1 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">5★</div>
+                <div class="text-3xl font-bold mb-1 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent"><span class="counter" data-target="5" data-suffix="★">0</span></div>
                 <div class="text-sm text-slate-500">Average Rating</div>
             </div>
             <div class="fade-up delay-4">
-                <div class="text-3xl font-bold mb-1 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">24h</div>
+                <div class="text-3xl font-bold mb-1 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent"><span class="counter" data-target="24" data-suffix="h">0</span></div>
                 <div class="text-sm text-slate-500">Response Time</div>
             </div>
         </div>
@@ -330,12 +226,9 @@
             <h2 class="fade-up text-3xl sm:text-4xl font-semibold tracking-tight mb-6">
                 Ready to elevate your <span class="font-serif-display italic gradient-text">online presence?</span>
             </h2>
-            <p class="fade-up delay-1 text-slate-400 leading-relaxed mb-8">
-                Whether you need a brand new website or a redesign of your existing one, our team is ready to help. Get a free, no-obligation quote within 24 hours.
-            </p>
+            <p class="fade-up delay-1 text-slate-400 leading-relaxed mb-8">Whether you need a brand new website or a redesign, our team is ready to help. Get a free, no-obligation quote within 24 hours.</p>
             <a href="contact.html" class="fade-up delay-2 glow-btn inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-500 text-white py-3.5 px-8 text-sm font-medium rounded-xl hover:from-blue-500 hover:to-blue-400 transition-all duration-300">
-                Get a Free Quote
-                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                Get In Touch <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
         </div>
     </section>
@@ -344,68 +237,54 @@
     <footer class="bg-[#020617] border-t border-white/5 pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-                <div>
-                    <a href="index.html" class="flex items-center gap-2.5 mb-4" aria-label="WebLabs Home">
-                        <div class="w-9 h-9 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-lg flex items-center justify-center"><i data-lucide="code-2" class="w-5 h-5 text-white"></i></div>
-                        <span class="text-lg font-semibold tracking-tight">Web<span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Labs</span></span>
-                    </a>
-                    <p class="text-sm text-slate-500 leading-relaxed">Professional web design and website creation services. We build custom, high-performance websites for businesses.</p>
-                </div>
-                <div>
-                    <h4 class="text-sm font-semibold uppercase tracking-wider mb-4 text-slate-300">Pages</h4>
-                    <ul class="space-y-2.5">
-                        <li><a href="index.html" class="text-sm text-slate-500 hover:text-white transition-colors">Home</a></li>
-                        <li><a href="services.html" class="text-sm text-slate-500 hover:text-white transition-colors">Services</a></li>
-                        <li><a href="portfolio.html" class="text-sm text-slate-500 hover:text-white transition-colors">Portfolio</a></li>
-                        <li><a href="pricing.html" class="text-sm text-slate-500 hover:text-white transition-colors">Pricing</a></li>
-                        <li><a href="contact.html" class="text-sm text-slate-500 hover:text-white transition-colors">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-sm font-semibold uppercase tracking-wider mb-4 text-slate-300">Services</h4>
-                    <ul class="space-y-2.5">
-                        <li><a href="services.html" class="text-sm text-slate-500 hover:text-white transition-colors">Web Design</a></li>
-                        <li><a href="services.html" class="text-sm text-slate-500 hover:text-white transition-colors">Web Development</a></li>
-                        <li><a href="services.html" class="text-sm text-slate-500 hover:text-white transition-colors">E-Commerce</a></li>
-                        <li><a href="services.html" class="text-sm text-slate-500 hover:text-white transition-colors">SEO & Support</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-sm font-semibold uppercase tracking-wider mb-4 text-slate-300">Contact</h4>
-                    <ul class="space-y-2.5">
-                        <li><a href="mailto:Web.Labs@outlook.com" class="text-sm text-slate-500 hover:text-white transition-colors">Web.Labs@outlook.com</a></li>
-                        <li><a href="https://weblab.solutions" class="text-sm text-slate-500 hover:text-white transition-colors">weblab.solutions</a></li>
-                        <li><span class="text-sm text-slate-500">Mon – Fri: 9:00 – 17:00</span></li>
-                    </ul>
-                </div>
+                <div><a href="index.html" class="flex items-center gap-2.5 mb-4" aria-label="WebLabs Home"><div class="w-9 h-9 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-lg flex items-center justify-center"><i data-lucide="code-2" class="w-5 h-5 text-white"></i></div><span class="text-lg font-semibold tracking-tight">Web<span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Labs</span></span></a><p class="text-sm text-slate-500 leading-relaxed">Professional web design and website creation services.</p></div>
+                <div><h4 class="text-sm font-semibold uppercase tracking-wider mb-4 text-slate-300">Pages</h4><ul class="space-y-2.5"><li><a href="index.html" class="text-sm text-slate-500 hover:text-white transition-colors">Home</a></li><li><a href="services.html" class="text-sm text-slate-500 hover:text-white transition-colors">Services</a></li><li><a href="portfolio.html" class="text-sm text-slate-500 hover:text-white transition-colors">Portfolio</a></li><li><a href="pricing.html" class="text-sm text-slate-500 hover:text-white transition-colors">Pricing</a></li><li><a href="contact.html" class="text-sm text-slate-500 hover:text-white transition-colors">Contact</a></li></ul></div>
+                <div><h4 class="text-sm font-semibold uppercase tracking-wider mb-4 text-slate-300">Services</h4><ul class="space-y-2.5"><li><a href="services.html" class="text-sm text-slate-500 hover:text-white transition-colors">Web Design</a></li><li><a href="services.html" class="text-sm text-slate-500 hover:text-white transition-colors">Web Development</a></li><li><a href="services.html" class="text-sm text-slate-500 hover:text-white transition-colors">E-Commerce</a></li><li><a href="services.html" class="text-sm text-slate-500 hover:text-white transition-colors">SEO & Support</a></li></ul></div>
+                <div><h4 class="text-sm font-semibold uppercase tracking-wider mb-4 text-slate-300">Contact</h4><ul class="space-y-2.5"><li><a href="mailto:Web.Labs@outlook.com" class="text-sm text-slate-500 hover:text-white transition-colors">Web.Labs@outlook.com</a></li><li><a href="https://weblab.solutions" class="text-sm text-slate-500 hover:text-white transition-colors">weblab.solutions</a></li><li><span class="text-sm text-slate-500">Mon – Fri: 9:00 – 17:00</span></li></ul></div>
             </div>
             <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <p class="text-xs text-slate-600">&copy; 2025 WebLabs. All rights reserved.</p>
-                <div class="flex items-center gap-6">
-                    <a href="#" class="text-xs text-slate-600 hover:text-slate-400 transition-colors">Privacy Policy</a>
-                    <a href="#" class="text-xs text-slate-600 hover:text-slate-400 transition-colors">Terms of Service</a>
-                </div>
+                <div class="flex items-center gap-6"><a href="#" class="text-xs text-slate-600 hover:text-slate-400 transition-colors">Privacy Policy</a><a href="#" class="text-xs text-slate-600 hover:text-slate-400 transition-colors">Terms of Service</a></div>
             </div>
         </div>
     </footer>
 
     <script>
         lucide.createIcons();
-        document.getElementById('mobileMenuBtn').addEventListener('click', () => {
-            document.getElementById('mobileMenu').classList.toggle('hidden');
-        });
+        document.getElementById('mobileMenuBtn').addEventListener('click', () => { document.getElementById('mobileMenu').classList.toggle('hidden'); });
 
-        // Lightweight Intersection Observer for entrance animations
+        // Intersection Observer for fade-up animations
         const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // Counter animation
+        let countersAnimated = false;
+        const statsObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // Only animate once
+                if (entry.isIntersecting && !countersAnimated) {
+                    countersAnimated = true;
+                    document.querySelectorAll('.counter').forEach(counter => {
+                        const target = parseInt(counter.dataset.target);
+                        const suffix = counter.dataset.suffix || '';
+                        const duration = 2000;
+                        const start = performance.now();
+                        function update(now) {
+                            const elapsed = now - start;
+                            const progress = Math.min(elapsed / duration, 1);
+                            const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+                            const current = Math.round(eased * target);
+                            counter.textContent = current + suffix;
+                            if (progress < 1) requestAnimationFrame(update);
+                        }
+                        requestAnimationFrame(update);
+                    });
+                    statsObserver.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+        }, { threshold: 0.3 });
+        statsObserver.observe(document.getElementById('stats-section'));
     </script>
 </body>
 </html>
