@@ -19,51 +19,24 @@
     <style>
         html{scroll-behavior:smooth}
         body{font-family:'Inter',sans-serif;position:relative}
-        body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;opacity:.03;pointer-events:none;z-index:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");background-repeat:repeat;background-size:256px 256px}
         .font-serif-display{font-family:'Playfair Display',serif}
-        .gradient-text{background:linear-gradient(135deg,#818cf8,#a78bfa,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .gradient-text{background:linear-gradient(135deg,#818cf8,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
         .fade-up{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}.fade-up.visible{opacity:1;transform:translateY(0)}
         .delay-1{transition-delay:.1s}.delay-2{transition-delay:.2s}.delay-3{transition-delay:.3s}
         .glass-card{background:rgba(15,23,42,.5);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(148,163,184,.1);transition:all .3s ease}
-        .glass-card:hover{border-color:rgba(99,102,241,.3)}
-
-        /* Card hover tints */
-        .card-emerald:hover{background:rgba(16,185,129,.04);border-color:rgba(16,185,129,.3);box-shadow:0 8px 32px rgba(16,185,129,.1)}
-        .card-amber:hover{background:rgba(245,158,11,.04);border-color:rgba(245,158,11,.3);box-shadow:0 8px 32px rgba(245,158,11,.1)}
-
+        .glass-card:hover{border-color:rgba(99,102,241,.25);box-shadow:0 8px 32px rgba(99,102,241,.06)}
         .nav-link{position:relative}.nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:linear-gradient(90deg,#818cf8,#a78bfa);border-radius:1px;transition:width .3s ease}.nav-link:hover::after,.nav-link.active::after{width:100%}
 
-        /* Enhanced gradient border — cycles pink → cyan → indigo → violet */
+        /* Gradient border — indigo → violet only */
         .gradient-border{position:relative;background:rgba(15,23,42,.5);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-        .gradient-border::before{content:'';position:absolute;inset:-2px;border-radius:inherit;padding:2px;background:linear-gradient(135deg,#ec4899,#06b6d4,#6366f1,#8b5cf6,#ec4899);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;background-size:400% 400%;animation:borderRotate 6s linear infinite}
+        .gradient-border::before{content:'';position:absolute;inset:-2px;border-radius:inherit;padding:2px;background:linear-gradient(135deg,#6366f1,#a78bfa,#818cf8,#6366f1);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;background-size:300% 300%;animation:borderRotate 6s linear infinite}
         @keyframes borderRotate{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 
-        .shimmer{position:relative;overflow:hidden}.shimmer::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.12),transparent);transition:left .5s}.shimmer:hover::before{left:100%}
+        /* Shimmer on hover only */
+        .shimmer{position:relative;overflow:hidden}.shimmer::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.08),transparent);transition:left .5s}.shimmer:hover::before{left:100%}
 
-        /* Rainbow scroll progress */
-        #scroll-progress{position:fixed;top:0;left:0;height:3px;z-index:100;background:linear-gradient(90deg,#ec4899,#f59e0b,#10b981,#06b6d4,#6366f1,#a78bfa);width:0%;transition:width .1s linear}
-
-        /* Floating orbs */
-        .orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;animation:orbFloat 8s ease-in-out infinite}
-        .orb-pink{background:rgba(236,72,153,.15);width:300px;height:300px}
-        .orb-cyan{background:rgba(6,182,212,.12);width:250px;height:250px}
-        .orb-violet{background:rgba(139,92,246,.1);width:200px;height:200px}
-        @keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}25%{transform:translate(20px,-30px) scale(1.05)}50%{transform:translate(-15px,15px) scale(.95)}75%{transform:translate(10px,20px) scale(1.02)}}
-
-        /* Popular badge glow */
-        .popular-badge{background:linear-gradient(135deg,#ec4899,#06b6d4,#6366f1);box-shadow:0 0 20px rgba(236,72,153,.4),0 0 40px rgba(6,182,212,.2);animation:badgeGlow 3s ease-in-out infinite alternate}
-        @keyframes badgeGlow{0%{box-shadow:0 0 20px rgba(236,72,153,.4),0 0 40px rgba(6,182,212,.2)}100%{box-shadow:0 0 30px rgba(6,182,212,.5),0 0 50px rgba(99,102,241,.3)}}
-
-        /* FAQ left borders */
-        .faq-cyan{border-left:3px solid #06b6d4}
-        .faq-pink{border-left:3px solid #ec4899}
-        .faq-emerald{border-left:3px solid #10b981}
-
-        /* Footer gradient line */
-        .footer-gradient-line{height:2px;background:linear-gradient(90deg,#ec4899,#06b6d4,#10b981)}
-
-        /* Strikethrough price */
-        .was-price{color:#64748b;font-size:.875rem;text-decoration:line-through}
+        /* Scroll progress — indigo → violet, 2px */
+        #scroll-progress{position:fixed;top:0;left:0;height:2px;z-index:100;background:linear-gradient(90deg,#6366f1,#a78bfa);width:0%;transition:width .1s linear}
     </style>
 <script type="application/ld+json">
     {
@@ -138,12 +111,9 @@
         </div>
     </nav>
 
-    <!-- Hero Section with Floating Orbs -->
+    <!-- Hero Section -->
     <section class="py-20 bg-[#020617] relative overflow-hidden">
         <div class="absolute top-0 left-1/3 w-[400px] h-[400px] bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none"></div>
-        <div class="orb orb-pink" style="top:-60px;left:10%;animation-delay:0s"></div>
-        <div class="orb orb-cyan" style="top:40px;right:8%;animation-delay:2s"></div>
-        <div class="orb orb-violet" style="bottom:-40px;left:50%;animation-delay:4s"></div>
         <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
             <span class="fade-up text-xs font-bold tracking-widest uppercase text-indigo-400 mb-4 block">Pricing</span>
             <h1 class="fade-up delay-1 text-4xl sm:text-5xl font-semibold tracking-tight mb-4">Website design <span class="font-serif-display italic gradient-text">pricing</span></h1>
@@ -154,51 +124,49 @@
     <!-- Pricing Cards -->
     <section class="py-24 bg-[#020617] relative"><div class="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
 
-        <!-- Starter — Emerald Accent -->
-        <article class="fade-up delay-1 glass-card card-emerald rounded-2xl p-8 transition-all duration-300 hover:translate-y-[-4px] flex flex-col">
+        <!-- Starter -->
+        <article class="fade-up delay-1 glass-card rounded-2xl p-8 transition-all duration-300 hover:translate-y-[-4px] flex flex-col">
             <div class="mb-6">
                 <h2 class="text-lg font-semibold mb-1">Starter</h2>
                 <p class="text-sm text-slate-500">Perfect for small businesses</p>
             </div>
             <div class="mb-6">
-                <span class="was-price block">Was £499</span>
                 <span class="text-4xl font-bold">£349</span>
                 <span class="text-slate-500 text-sm ml-1">one-time</span>
             </div>
             <ul class="space-y-3 mb-8 flex-grow">
-                <li class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>Up to 5 pages</li>
-                <li class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>Mobile responsive</li>
-                <li class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>Contact form</li>
-                <li class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>Basic SEO setup</li>
-                <li class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>1 round of revisions</li>
+                <li class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-indigo-400 flex-shrink-0"></i>Up to 5 pages</li>
+                <li class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-indigo-400 flex-shrink-0"></i>Mobile responsive</li>
+                <li class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-indigo-400 flex-shrink-0"></i>Contact form</li>
+                <li class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-indigo-400 flex-shrink-0"></i>Basic SEO setup</li>
+                <li class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-indigo-400 flex-shrink-0"></i>1 round of revisions</li>
             </ul>
-            <a href="contact.html" class="block text-center bg-white/5 border border-white/10 text-white py-3 px-6 rounded-full text-sm font-medium hover:bg-emerald-500/10 hover:border-emerald-500/30 transition-colors">Get Started</a>
+            <a href="contact.html" class="block text-center bg-white/5 border border-white/10 text-white py-3 px-6 rounded-full text-sm font-medium hover:bg-indigo-500/10 hover:border-indigo-500/30 transition-colors">Get Started</a>
         </article>
 
-        <!-- Professional — Popular (enhanced gradient border) -->
+        <!-- Professional — Popular -->
         <article class="fade-up delay-2 gradient-border rounded-2xl p-8 flex flex-col relative">
-            <div class="absolute -top-3 left-1/2 -translate-x-1/2 popular-badge text-white text-xs font-bold tracking-widest uppercase px-5 py-1.5 rounded-full z-10">Popular</div>
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-indigo-600 to-violet-500 text-white text-xs font-bold tracking-widest uppercase px-5 py-1.5 rounded-full z-10">Popular</div>
             <div class="mb-6">
                 <h2 class="text-lg font-semibold mb-1">Professional</h2>
                 <p class="text-sm text-slate-500">For growing businesses</p>
             </div>
             <div class="mb-6">
-                <span class="was-price block">Was £999</span>
                 <span class="text-4xl font-bold">£699</span>
                 <span class="text-slate-500 text-sm ml-1">one-time</span>
             </div>
             <ul class="space-y-3 mb-8 flex-grow">
-                <li class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-cyan-400 flex-shrink-0"></i>Up to 15 pages</li>
-                <li class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-cyan-400 flex-shrink-0"></i>CMS integration</li>
-                <li class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-cyan-400 flex-shrink-0"></i>Advanced SEO</li>
-                <li class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-cyan-400 flex-shrink-0"></i>3 rounds of revisions</li>
-                <li class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-cyan-400 flex-shrink-0"></i>30 days support</li>
+                <li class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-indigo-400 flex-shrink-0"></i>Up to 15 pages</li>
+                <li class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-indigo-400 flex-shrink-0"></i>CMS integration</li>
+                <li class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-indigo-400 flex-shrink-0"></i>Advanced SEO</li>
+                <li class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-indigo-400 flex-shrink-0"></i>3 rounds of revisions</li>
+                <li class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-indigo-400 flex-shrink-0"></i>30 days support</li>
             </ul>
-            <a href="contact.html" class="shimmer block text-center bg-gradient-to-r from-indigo-600 via-cyan-500 to-violet-500 text-white py-3 px-6 rounded-full text-sm font-medium hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 shadow-lg shadow-indigo-500/20">Get Started</a>
+            <a href="contact.html" class="shimmer block text-center bg-gradient-to-r from-indigo-600 to-violet-500 text-white py-3 px-6 rounded-full text-sm font-medium hover:shadow-lg hover:shadow-indigo-500/25 transition-all duration-300 shadow-lg shadow-indigo-500/20">Get Started</a>
         </article>
 
-        <!-- Enterprise — Amber Accent -->
-        <article class="fade-up delay-3 glass-card card-amber rounded-2xl p-8 transition-all duration-300 hover:translate-y-[-4px] flex flex-col">
+        <!-- Enterprise -->
+        <article class="fade-up delay-3 glass-card rounded-2xl p-8 transition-all duration-300 hover:translate-y-[-4px] flex flex-col">
             <div class="mb-6">
                 <h2 class="text-lg font-semibold mb-1">Enterprise</h2>
                 <p class="text-sm text-slate-500">Full-scale solutions</p>
@@ -207,78 +175,71 @@
                 <span class="text-4xl font-bold">Custom</span>
             </div>
             <ul class="space-y-3 mb-8 flex-grow">
-                <li class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-amber-400 flex-shrink-0"></i>Unlimited pages</li>
-                <li class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-amber-400 flex-shrink-0"></i>Hosting &amp; domain included</li>
-                <li class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-amber-400 flex-shrink-0"></i>Custom integrations</li>
-                <li class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-amber-400 flex-shrink-0"></i>Unlimited revisions</li>
-                <li class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-amber-400 flex-shrink-0"></i>Priority support</li>
+                <li class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-indigo-400 flex-shrink-0"></i>Unlimited pages</li>
+                <li class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-indigo-400 flex-shrink-0"></i>Hosting &amp; domain included</li>
+                <li class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-indigo-400 flex-shrink-0"></i>Custom integrations</li>
+                <li class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-indigo-400 flex-shrink-0"></i>Unlimited revisions</li>
+                <li class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-indigo-400 flex-shrink-0"></i>Priority support</li>
             </ul>
-            <a href="contact.html" class="block text-center bg-white/5 border border-white/10 text-white py-3 px-6 rounded-full text-sm font-medium hover:bg-amber-500/10 hover:border-amber-500/30 transition-colors">Contact Us</a>
+            <a href="contact.html" class="block text-center bg-white/5 border border-white/10 text-white py-3 px-6 rounded-full text-sm font-medium hover:bg-indigo-500/10 hover:border-indigo-500/30 transition-colors">Contact Us</a>
         </article>
     </div></section>
 
     <!-- FAQ Section -->
     <section class="py-24 bg-[#020617] border-t border-white/5"><div class="max-w-3xl mx-auto px-6"><div class="text-center mb-16"><span class="fade-up text-xs font-bold tracking-widest uppercase text-indigo-400 mb-4 block">FAQ</span><h2 class="fade-up delay-1 text-3xl sm:text-4xl font-semibold tracking-tight">Frequently asked <span class="font-serif-display italic gradient-text">questions</span></h2></div><div class="space-y-3">
 
-        <!-- FAQ 1 — Cyan border -->
-        <details class="fade-up delay-1 group glass-card faq-cyan rounded-xl overflow-hidden">
+        <details class="fade-up delay-1 group glass-card rounded-xl overflow-hidden">
             <summary class="flex items-center justify-between cursor-pointer px-6 py-5 hover:bg-white/5 transition-colors">
                 <span class="font-medium text-sm pr-4">How long does it take to build a website?</span>
-                <i data-lucide="chevron-down" class="w-5 h-5 text-cyan-400 group-open:rotate-180 transition-transform duration-200 flex-shrink-0"></i>
+                <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0"></i>
             </summary>
             <div class="px-6 pb-5 text-sm text-slate-400 leading-relaxed">Starter: 1–2 weeks, Professional: 3–4 weeks, Enterprise: 6+ weeks.</div>
         </details>
 
-        <!-- FAQ 2 — Pink border -->
-        <details class="fade-up delay-2 group glass-card faq-pink rounded-xl overflow-hidden">
+        <details class="fade-up delay-2 group glass-card rounded-xl overflow-hidden">
             <summary class="flex items-center justify-between cursor-pointer px-6 py-5 hover:bg-white/5 transition-colors">
                 <span class="font-medium text-sm pr-4">Do you offer ongoing website maintenance?</span>
-                <i data-lucide="chevron-down" class="w-5 h-5 text-pink-400 group-open:rotate-180 transition-transform duration-200 flex-shrink-0"></i>
+                <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0"></i>
             </summary>
             <div class="px-6 pb-5 text-sm text-slate-400 leading-relaxed">Yes! Optional maintenance from £35/month including security updates, content changes, and priority support.</div>
         </details>
 
-        <!-- FAQ 3 — Emerald border -->
-        <details class="fade-up delay-2 group glass-card faq-emerald rounded-xl overflow-hidden">
+        <details class="fade-up delay-2 group glass-card rounded-xl overflow-hidden">
             <summary class="flex items-center justify-between cursor-pointer px-6 py-5 hover:bg-white/5 transition-colors">
                 <span class="font-medium text-sm pr-4">Will I be able to update the website myself?</span>
-                <i data-lucide="chevron-down" class="w-5 h-5 text-emerald-400 group-open:rotate-180 transition-transform duration-200 flex-shrink-0"></i>
+                <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0"></i>
             </summary>
             <div class="px-6 pb-5 text-sm text-slate-400 leading-relaxed">Yes — Professional and Enterprise packages include a user-friendly CMS with training provided.</div>
         </details>
 
-        <!-- FAQ 4 — Cyan border -->
-        <details class="fade-up delay-3 group glass-card faq-cyan rounded-xl overflow-hidden">
+        <details class="fade-up delay-3 group glass-card rounded-xl overflow-hidden">
             <summary class="flex items-center justify-between cursor-pointer px-6 py-5 hover:bg-white/5 transition-colors">
                 <span class="font-medium text-sm pr-4">What do you need from me to get started?</span>
-                <i data-lucide="chevron-down" class="w-5 h-5 text-cyan-400 group-open:rotate-180 transition-transform duration-200 flex-shrink-0"></i>
+                <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0"></i>
             </summary>
             <div class="px-6 pb-5 text-sm text-slate-400 leading-relaxed">Brand assets, content, and an idea of what you want. We can help with the rest.</div>
         </details>
 
-        <!-- FAQ 5 — Pink border -->
-        <details class="fade-up delay-3 group glass-card faq-pink rounded-xl overflow-hidden">
+        <details class="fade-up delay-3 group glass-card rounded-xl overflow-hidden">
             <summary class="flex items-center justify-between cursor-pointer px-6 py-5 hover:bg-white/5 transition-colors">
                 <span class="font-medium text-sm pr-4">Do you register domains and provide hosting?</span>
-                <i data-lucide="chevron-down" class="w-5 h-5 text-pink-400 group-open:rotate-180 transition-transform duration-200 flex-shrink-0"></i>
+                <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0"></i>
             </summary>
             <div class="px-6 pb-5 text-sm text-slate-400 leading-relaxed">We handle domain registration and provide reliable hosting. We set everything up for you.</div>
         </details>
 
-        <!-- FAQ 6 — Emerald border -->
-        <details class="fade-up delay-3 group glass-card faq-emerald rounded-xl overflow-hidden">
+        <details class="fade-up delay-3 group glass-card rounded-xl overflow-hidden">
             <summary class="flex items-center justify-between cursor-pointer px-6 py-5 hover:bg-white/5 transition-colors">
                 <span class="font-medium text-sm pr-4">What if I'm not happy with the design?</span>
-                <i data-lucide="chevron-down" class="w-5 h-5 text-emerald-400 group-open:rotate-180 transition-transform duration-200 flex-shrink-0"></i>
+                <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0"></i>
             </summary>
             <div class="px-6 pb-5 text-sm text-slate-400 leading-relaxed">We work iteratively with revision rounds included. No surprises at launch.</div>
         </details>
 
     </div></div></section>
 
-    <!-- Footer with gradient line -->
-    <div class="footer-gradient-line"></div>
-    <footer class="bg-[#020617] pt-16 pb-8">
+    <!-- Footer -->
+    <footer class="bg-[#020617] pt-16 pb-8 border-t border-white/5">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                 <div><a href="index.html" class="flex items-center gap-2.5 mb-4" aria-label="Weblab Solutions Home"><div class="w-9 h-9 bg-gradient-to-br from-indigo-500 to-violet-400 rounded-xl flex items-center justify-center"><i data-lucide="code-2" class="w-5 h-5 text-white"></i></div><span class="text-lg font-semibold tracking-tight">Weblab <span class="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">Solutions</span></span></a><p class="text-sm text-slate-500 leading-relaxed">Professional web design and website creation services.</p></div>

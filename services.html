@@ -20,11 +20,6 @@
         html{scroll-behavior:smooth}
         body{font-family:'Inter',sans-serif}
 
-        /* Noise texture overlay */
-        body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.03;
-            background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-            background-repeat:repeat;background-size:128px 128px}
-
         .font-serif-display{font-family:'Playfair Display',serif}
         .gradient-text{background:linear-gradient(135deg,#818cf8,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
@@ -34,45 +29,21 @@
 
         /* Glass card base */
         .glass-card{background:rgba(15,23,42,.5);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(148,163,184,.1);transition:all .4s cubic-bezier(.22,1,.36,1)}
-        .glass-card:hover{transform:translateY(-6px)}
-
-        /* Per-card accent glow on hover */
-        .glass-card[data-accent="pink"]:hover{border-color:rgba(236,72,153,.4);box-shadow:0 0 30px rgba(236,72,153,.12),0 8px 32px rgba(236,72,153,.08)}
-        .glass-card[data-accent="cyan"]:hover{border-color:rgba(6,182,212,.4);box-shadow:0 0 30px rgba(6,182,212,.12),0 8px 32px rgba(6,182,212,.08)}
-        .glass-card[data-accent="emerald"]:hover{border-color:rgba(16,185,129,.4);box-shadow:0 0 30px rgba(16,185,129,.12),0 8px 32px rgba(16,185,129,.08)}
-        .glass-card[data-accent="amber"]:hover{border-color:rgba(245,158,11,.4);box-shadow:0 0 30px rgba(245,158,11,.12),0 8px 32px rgba(245,158,11,.08)}
-        .glass-card[data-accent="orange"]:hover{border-color:rgba(249,115,22,.4);box-shadow:0 0 30px rgba(249,115,22,.12),0 8px 32px rgba(249,115,22,.08)}
-        .glass-card[data-accent="violet"]:hover{border-color:rgba(139,92,246,.4);box-shadow:0 0 30px rgba(139,92,246,.12),0 8px 32px rgba(139,92,246,.08)}
+        .glass-card:hover{transform:translateY(-6px);border-color:rgba(99,102,241,.25);box-shadow:0 8px 32px rgba(99,102,241,.08)}
 
         /* Nav link underline */
         .nav-link{position:relative}.nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:linear-gradient(90deg,#818cf8,#a78bfa);border-radius:1px;transition:width .3s ease}.nav-link:hover::after,.nav-link.active::after{width:100%}
 
-        /* Enhanced shimmer */
+        /* Shimmer on hover only */
         .shimmer{position:relative;overflow:hidden}
-        .shimmer::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);transition:left .6s}
+        .shimmer::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.08),transparent);transition:left .6s}
         .shimmer:hover::before{left:100%}
 
-        /* Rainbow scroll progress */
-        #scroll-progress{position:fixed;top:0;left:0;height:3px;z-index:100;background:linear-gradient(90deg,#ec4899,#f59e0b,#10b981,#06b6d4,#6366f1,#a78bfa);width:0%;transition:width .1s linear;border-radius:0 2px 2px 0}
+        /* Scroll progress — indigo to violet */
+        #scroll-progress{position:fixed;top:0;left:0;height:2px;z-index:100;background:linear-gradient(90deg,#6366f1,#a78bfa);width:0%;transition:width .1s linear;border-radius:0 2px 2px 0}
 
-        /* Floating orbs */
-        .floating-orb{position:absolute;border-radius:50%;pointer-events:none;filter:blur(80px);opacity:.35;animation:orbFloat 20s ease-in-out infinite}
-        .floating-orb.orb-pink{background:#ec4899;width:300px;height:300px;top:-60px;left:-80px;animation-delay:0s}
-        .floating-orb.orb-cyan{background:#06b6d4;width:250px;height:250px;top:40px;right:-60px;animation-delay:-7s}
-        .floating-orb.orb-emerald{background:#10b981;width:200px;height:200px;bottom:-40px;left:40%;animation-delay:-14s}
-
-        @keyframes orbFloat{
-            0%,100%{transform:translate(0,0) scale(1)}
-            25%{transform:translate(30px,-20px) scale(1.08)}
-            50%{transform:translate(-20px,25px) scale(.95)}
-            75%{transform:translate(15px,15px) scale(1.05)}
-        }
-
-        /* Process dashed line gradient */
-        .process-line{background:linear-gradient(90deg,rgba(236,72,153,.25),rgba(6,182,212,.25),rgba(16,185,129,.25),rgba(245,158,11,.25));height:2px}
-
-        /* Footer gradient top border */
-        .footer-gradient-top{height:2px;background:linear-gradient(90deg,#ec4899,#06b6d4,#10b981)}
+        /* Process connecting line */
+        .process-line{border-top:2px dashed rgba(255,255,255,.1);height:0}
     </style>
 </head>
 <body class="bg-[#020617] text-white antialiased">
@@ -109,11 +80,8 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION with floating orbs -->
+    <!-- HERO SECTION -->
     <section class="py-24 bg-[#020617] relative overflow-hidden">
-        <div class="floating-orb orb-pink"></div>
-        <div class="floating-orb orb-cyan"></div>
-        <div class="floating-orb orb-emerald"></div>
         <div class="absolute top-0 left-1/3 w-[400px] h-[400px] bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none"></div>
         <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
             <span class="fade-up text-xs font-bold tracking-widest uppercase text-indigo-400 mb-4 block">Our Services</span>
@@ -122,120 +90,120 @@
         </div>
     </section>
 
-    <!-- SERVICE CARDS — each with unique accent colour -->
+    <!-- SERVICE CARDS -->
     <section class="py-24 bg-[#020617]"><div class="max-w-7xl mx-auto px-6"><div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-        <!-- 1 · Web Design — Hot Pink -->
-        <article class="fade-up delay-1 glass-card rounded-2xl p-8 flex gap-6" data-accent="pink">
+        <!-- 1 · Web Design -->
+        <article class="fade-up delay-1 glass-card rounded-2xl p-8 flex gap-6">
             <div class="flex-shrink-0">
-                <div class="w-14 h-14 bg-pink-500/10 rounded-xl flex items-center justify-center">
-                    <i data-lucide="palette" class="w-7 h-7 text-pink-400"></i>
+                <div class="w-14 h-14 bg-indigo-500/10 rounded-xl flex items-center justify-center">
+                    <i data-lucide="palette" class="w-7 h-7 text-indigo-400"></i>
                 </div>
             </div>
             <div>
                 <h2 class="text-xl font-semibold mb-2">Web Design</h2>
                 <p class="text-sm text-slate-400 leading-relaxed mb-4">Beautiful, modern website designs tailored to your brand identity. We create visually stunning layouts that captivate visitors and communicate your message effectively.</p>
                 <ul class="space-y-1.5 text-sm text-slate-300">
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-400"></i>Custom UI/UX Design</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-400"></i>Brand Identity Integration</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-400"></i>Interactive Prototypes</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-400"></i>Custom UI/UX Design</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-400"></i>Brand Identity Integration</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-400"></i>Interactive Prototypes</li>
                 </ul>
             </div>
         </article>
 
-        <!-- 2 · Web Development — Electric Cyan -->
-        <article class="fade-up delay-2 glass-card rounded-2xl p-8 flex gap-6" data-accent="cyan">
+        <!-- 2 · Web Development -->
+        <article class="fade-up delay-2 glass-card rounded-2xl p-8 flex gap-6">
             <div class="flex-shrink-0">
-                <div class="w-14 h-14 bg-cyan-500/10 rounded-xl flex items-center justify-center">
-                    <i data-lucide="code-2" class="w-7 h-7 text-cyan-400"></i>
+                <div class="w-14 h-14 bg-indigo-500/10 rounded-xl flex items-center justify-center">
+                    <i data-lucide="code-2" class="w-7 h-7 text-indigo-400"></i>
                 </div>
             </div>
             <div>
                 <h2 class="text-xl font-semibold mb-2">Web Development</h2>
                 <p class="text-sm text-slate-400 leading-relaxed mb-4">Clean, performant code that brings your designs to life. We build responsive, fast-loading websites using the latest web development technologies.</p>
                 <ul class="space-y-1.5 text-sm text-slate-300">
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-400"></i>Frontend &amp; Backend Development</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-400"></i>CMS Integration</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-400"></i>API Development</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-400"></i>Frontend &amp; Backend Development</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-400"></i>CMS Integration</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-400"></i>API Development</li>
                 </ul>
             </div>
         </article>
 
-        <!-- 3 · Website Hosting — Emerald -->
-        <article class="fade-up delay-3 glass-card rounded-2xl p-8 flex gap-6" data-accent="emerald">
+        <!-- 3 · Website Hosting & Domains -->
+        <article class="fade-up delay-3 glass-card rounded-2xl p-8 flex gap-6">
             <div class="flex-shrink-0">
-                <div class="w-14 h-14 bg-emerald-500/10 rounded-xl flex items-center justify-center">
-                    <i data-lucide="server" class="w-7 h-7 text-emerald-400"></i>
+                <div class="w-14 h-14 bg-indigo-500/10 rounded-xl flex items-center justify-center">
+                    <i data-lucide="server" class="w-7 h-7 text-indigo-400"></i>
                 </div>
             </div>
             <div>
                 <h2 class="text-xl font-semibold mb-2">Website Hosting &amp; Domains</h2>
                 <p class="text-sm text-slate-400 leading-relaxed mb-4">Fast, reliable website hosting with free SSL certificates and domain registration included. We handle the technical setup so you can focus on your business.</p>
                 <ul class="space-y-1.5 text-sm text-slate-300">
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>Domain Registration</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>Free SSL Certificates</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>99.9% Uptime Guarantee</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-400"></i>Domain Registration</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-400"></i>Free SSL Certificates</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-400"></i>99.9% Uptime Guarantee</li>
                 </ul>
             </div>
         </article>
 
-        <!-- 4 · SEO Optimisation — Amber -->
-        <article class="fade-up delay-4 glass-card rounded-2xl p-8 flex gap-6" data-accent="amber">
+        <!-- 4 · SEO Optimisation -->
+        <article class="fade-up delay-4 glass-card rounded-2xl p-8 flex gap-6">
             <div class="flex-shrink-0">
-                <div class="w-14 h-14 bg-amber-500/10 rounded-xl flex items-center justify-center">
-                    <i data-lucide="search" class="w-7 h-7 text-amber-400"></i>
+                <div class="w-14 h-14 bg-indigo-500/10 rounded-xl flex items-center justify-center">
+                    <i data-lucide="search" class="w-7 h-7 text-indigo-400"></i>
                 </div>
             </div>
             <div>
                 <h2 class="text-xl font-semibold mb-2">SEO Optimisation</h2>
                 <p class="text-sm text-slate-400 leading-relaxed mb-4">Get found on Google. We implement proven SEO strategies to improve your search engine rankings, drive organic traffic, and grow your online visibility.</p>
                 <ul class="space-y-1.5 text-sm text-slate-300">
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-amber-400"></i>Technical SEO Setup</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-amber-400"></i>Page Speed Optimisation</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-amber-400"></i>Content Strategy</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-400"></i>Technical SEO Setup</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-400"></i>Page Speed Optimisation</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-400"></i>Content Strategy</li>
                 </ul>
             </div>
         </article>
 
-        <!-- 5 · Responsive Web Design — Orange -->
-        <article class="fade-up delay-5 glass-card rounded-2xl p-8 flex gap-6" data-accent="orange">
+        <!-- 5 · Responsive Web Design -->
+        <article class="fade-up delay-5 glass-card rounded-2xl p-8 flex gap-6">
             <div class="flex-shrink-0">
-                <div class="w-14 h-14 bg-orange-500/10 rounded-xl flex items-center justify-center">
-                    <i data-lucide="smartphone" class="w-7 h-7 text-orange-400"></i>
+                <div class="w-14 h-14 bg-indigo-500/10 rounded-xl flex items-center justify-center">
+                    <i data-lucide="smartphone" class="w-7 h-7 text-indigo-400"></i>
                 </div>
             </div>
             <div>
                 <h2 class="text-xl font-semibold mb-2">Responsive Web Design</h2>
                 <p class="text-sm text-slate-400 leading-relaxed mb-4">Pixel-perfect experiences across desktops, tablets, and mobile phones. Your website will look stunning and function flawlessly on every device.</p>
                 <ul class="space-y-1.5 text-sm text-slate-300">
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-orange-400"></i>Mobile-First Approach</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-orange-400"></i>Cross-Browser Testing</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-orange-400"></i>Touch Optimised</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-400"></i>Mobile-First Approach</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-400"></i>Cross-Browser Testing</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-400"></i>Touch Optimised</li>
                 </ul>
             </div>
         </article>
 
-        <!-- 6 · Maintenance — Violet -->
-        <article class="fade-up delay-6 glass-card rounded-2xl p-8 flex gap-6" data-accent="violet">
+        <!-- 6 · Maintenance & Support -->
+        <article class="fade-up delay-6 glass-card rounded-2xl p-8 flex gap-6">
             <div class="flex-shrink-0">
-                <div class="w-14 h-14 bg-violet-500/10 rounded-xl flex items-center justify-center">
-                    <i data-lucide="settings" class="w-7 h-7 text-violet-400"></i>
+                <div class="w-14 h-14 bg-indigo-500/10 rounded-xl flex items-center justify-center">
+                    <i data-lucide="settings" class="w-7 h-7 text-indigo-400"></i>
                 </div>
             </div>
             <div>
                 <h2 class="text-xl font-semibold mb-2">Website Maintenance &amp; Support</h2>
                 <p class="text-sm text-slate-400 leading-relaxed mb-4">Ongoing support to keep your site secure, updated, and running at peak performance. We don't just build and leave — we're here for the long term.</p>
                 <ul class="space-y-1.5 text-sm text-slate-300">
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-violet-400"></i>Security Updates</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-violet-400"></i>Content Updates</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-violet-400"></i>Priority Support</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-400"></i>Security Updates</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-400"></i>Content Updates</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-400"></i>Priority Support</li>
                 </ul>
             </div>
         </article>
 
     </div></div></section>
 
-    <!-- PROCESS SECTION — 4 steps with coloured number circles -->
+    <!-- PROCESS SECTION — 4 steps -->
     <section class="py-24 bg-[#020617] border-t border-white/5 relative overflow-hidden">
         <div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-violet-500/8 rounded-full blur-[120px] pointer-events-none"></div>
         <div class="relative z-10 max-w-7xl mx-auto px-6">
@@ -245,37 +213,37 @@
                 <p class="fade-up delay-2 text-slate-400 max-w-2xl mx-auto leading-relaxed">A clear, collaborative approach that turns your vision into a high-performing website — on time and on budget.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Step 1 — Discovery — Pink -->
+                <!-- Step 1 — Discovery -->
                 <div class="fade-up delay-1 relative text-center">
-                    <div class="w-16 h-16 mx-auto bg-pink-500/15 border-2 border-pink-500/30 rounded-full flex items-center justify-center mb-5">
-                        <span class="text-xl font-bold text-pink-400">1</span>
+                    <div class="w-16 h-16 mx-auto bg-indigo-500/10 border-2 border-indigo-500/30 rounded-full flex items-center justify-center mb-5">
+                        <span class="text-xl font-bold text-indigo-400">1</span>
                     </div>
                     <h3 class="text-lg font-semibold mb-2">Discovery</h3>
                     <p class="text-sm text-slate-400 leading-relaxed">We learn about your business, goals, target audience, and competitors to craft the perfect web strategy.</p>
                     <div class="hidden lg:block absolute top-8 left-[60%] w-[80%]"><div class="process-line"></div></div>
                 </div>
-                <!-- Step 2 — Design — Cyan -->
+                <!-- Step 2 — Design -->
                 <div class="fade-up delay-2 relative text-center">
-                    <div class="w-16 h-16 mx-auto bg-cyan-500/15 border-2 border-cyan-500/30 rounded-full flex items-center justify-center mb-5">
-                        <span class="text-xl font-bold text-cyan-400">2</span>
+                    <div class="w-16 h-16 mx-auto bg-indigo-500/10 border-2 border-indigo-500/30 rounded-full flex items-center justify-center mb-5">
+                        <span class="text-xl font-bold text-indigo-400">2</span>
                     </div>
                     <h3 class="text-lg font-semibold mb-2">Design</h3>
                     <p class="text-sm text-slate-400 leading-relaxed">We create wireframes and visual mockups, iterating with you until every design detail is perfect.</p>
                     <div class="hidden lg:block absolute top-8 left-[60%] w-[80%]"><div class="process-line"></div></div>
                 </div>
-                <!-- Step 3 — Develop — Emerald -->
+                <!-- Step 3 — Develop -->
                 <div class="fade-up delay-3 relative text-center">
-                    <div class="w-16 h-16 mx-auto bg-emerald-500/15 border-2 border-emerald-500/30 rounded-full flex items-center justify-center mb-5">
-                        <span class="text-xl font-bold text-emerald-400">3</span>
+                    <div class="w-16 h-16 mx-auto bg-indigo-500/10 border-2 border-indigo-500/30 rounded-full flex items-center justify-center mb-5">
+                        <span class="text-xl font-bold text-indigo-400">3</span>
                     </div>
                     <h3 class="text-lg font-semibold mb-2">Develop</h3>
                     <p class="text-sm text-slate-400 leading-relaxed">We bring designs to life with clean, performant code and responsive, feature-rich website pages.</p>
                     <div class="hidden lg:block absolute top-8 left-[60%] w-[80%]"><div class="process-line"></div></div>
                 </div>
-                <!-- Step 4 — Launch — Amber -->
+                <!-- Step 4 — Launch -->
                 <div class="fade-up delay-4 text-center">
-                    <div class="w-16 h-16 mx-auto bg-amber-500/15 border-2 border-amber-500/30 rounded-full flex items-center justify-center mb-5">
-                        <span class="text-xl font-bold text-amber-400">4</span>
+                    <div class="w-16 h-16 mx-auto bg-indigo-500/10 border-2 border-indigo-500/30 rounded-full flex items-center justify-center mb-5">
+                        <span class="text-xl font-bold text-indigo-400">4</span>
                     </div>
                     <h3 class="text-lg font-semibold mb-2">Launch</h3>
                     <p class="text-sm text-slate-400 leading-relaxed">We test everything, deploy your website, and provide ongoing support to ensure continued success.</p>
@@ -292,8 +260,7 @@
         </div>
     </section>
 
-    <!-- FOOTER — gradient line at top -->
-    <div class="footer-gradient-top"></div>
+    <!-- FOOTER -->
     <footer class="bg-[#020617] border-t border-white/5 pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
